@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import FullSearch from "./components/FullSearch";
+import Header from "./components/Header";
+import Intro from "./components/Intro";
+import NavMobile from "./components/NavMobile";
+import Offer from "./components/Offer";
+import SimpleSearch from "./components/SimpleSearch";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavMobile/>
+      <Header/>
+      <SimpleSearch/>
+      <Intro/>
+      <Offer/>
+      <FullSearch></FullSearch>
+
+      <div></div>
+
+      <div className="sucursales">
+
+        <h2>Nuestras Sucursales</h2>
+
+        <div className="sucursal-card">
+
+          <img src="./assets/agencia-autos.jpg" alt="sucursal"/>
+
+          <h3>Bragado, Buenos Aires</h3>
+
+          <p>Rivadavia 1801, Bragado</p>
+
+          <button type="button">Contactanos</button>
+        </div>
+
+      </div>
+
+
+
+    
+    </>
   );
 }
 
