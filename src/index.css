@@ -205,9 +205,18 @@ nav svg {
 }
 
 .mini-presentacion svg {
-   background-color: #eb5f2852;
-   fill: #3b3b3b;
-   border-radius: 50%;
+  background-color: #eb5f2852;
+  fill: #3b3b3b;
+  border-radius: 50%;
+  animation: float 1.5s ease-in-out infinite alternate;
+}
+@keyframes float {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
 }
 
 .mini-presentacion-texto {
