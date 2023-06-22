@@ -287,6 +287,7 @@ nav svg {
   font-family: 'Oswald', sans-serif;
   color: #5d5d60;
   margin-bottom: 10%;
+  border-radius: 0px;
 }
 
 .buscador-formulario select:focus {
