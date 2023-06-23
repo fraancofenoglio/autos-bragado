@@ -1,18 +1,30 @@
+import { HashLink } from "react-router-hash-link"
 
 const Footer = () => {
   return (
     <footer>
 
         <div className="footer-links">
-        <a href="/">Inicio</a>
-        <a href="/">Busca tu auto</a>
-        <a href="/">Vende tu auto</a>
-        <a href="/">Contacto</a>
+          <HashLink smooth to="#">
+            Inicio
+          </HashLink>
+
+          <HashLink smooth to="#oferta">
+            Busca tu auto
+          </HashLink>
+
+          <HashLink smooth to="/vender">
+            Vende tu auto
+          </HashLink>
+
+          <HashLink smooth to="#contacto">
+            Contactenos
+          </HashLink>
         </div>
 
         <h3>Consultanos</h3>
 
-        <div className="form-container-footer">
+        <div id="contacto" className="form-container-footer">
         <form>
             <input type="text" placeholder="Nombre"/>
 

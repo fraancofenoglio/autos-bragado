@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { HashLink } from 'react-router-hash-link'
 
 const NavMobile = () => {
 
@@ -33,11 +34,17 @@ const NavMobile = () => {
 
           <a href="/">Inicio</a>
 
-          <a href="/">Busca tu auto</a>
+          <HashLink smooth to="#oferta" onClick={() => setTimeout(() => handleClick(), 1000)}>
+            Busca tu auto
+          </HashLink>
 
-          <a href="/">Vende tu auto</a>
+          <HashLink smooth to="/vender" onClick={() => setTimeout(() => handleClick(), 1000)}>
+            Vende tu auto
+          </HashLink>
 
-          <a href="/">Contacto</a>
+          <HashLink smooth to="#contacto" onClick={() => setTimeout(() => handleClick(), 1000)}>
+            Contactenos
+          </HashLink>
 
 
         </div>

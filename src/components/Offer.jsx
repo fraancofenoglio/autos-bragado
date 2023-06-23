@@ -1,7 +1,7 @@
 
 const Offer = () => {
   return (
-    <section className="oferta">
+    <section className="oferta" id="oferta">
         <img src="../assets/autos.jpg" alt=""/>
 
         <div className="oferta-texto">
