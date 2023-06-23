@@ -34,15 +34,15 @@ const NavMobile = () => {
 
           <a href="/">Inicio</a>
 
-          <HashLink smooth to="#oferta" onClick={() => setTimeout(() => handleClick(), 1000)}>
+          <HashLink smooth to="#oferta">
             Busca tu auto
           </HashLink>
 
-          <HashLink smooth to="/vender" onClick={() => setTimeout(() => handleClick(), 1000)}>
+          <HashLink smooth to="/vender">
             Vende tu auto
           </HashLink>
 
-          <HashLink smooth to="#contacto" onClick={() => setTimeout(() => handleClick(), 1000)}>
+          <HashLink smooth to="#contacto">
             Contactenos
           </HashLink>
 
