@@ -1,5 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
-import Home from "./pages/Home";
+import NavMobile from "./components/NavMobile";
+import MainRoutes from "./routes/MainRoutes";
+
 
 
 function App() {
@@ -8,7 +10,8 @@ function App() {
     <>
 
       <BrowserRouter>
-        <Home/>
+        <NavMobile/>
+        <MainRoutes/>
       </BrowserRouter>
 
     </>

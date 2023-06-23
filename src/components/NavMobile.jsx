@@ -32,17 +32,17 @@ const NavMobile = () => {
 
         <div className="navegacion" style={{animation: animation}}>
 
-          <a href="/">Inicio</a>
+          <a href="/" onClick={handleClick}>Inicio</a>
 
-          <HashLink smooth to="#oferta">
+          <HashLink smooth to="/compra" onClick={handleClick}>
             Busca tu auto
           </HashLink>
 
-          <HashLink smooth to="/vender">
+          <HashLink smooth to="/venta" onClick={handleClick}>
             Vende tu auto
           </HashLink>
 
-          <HashLink smooth to="#contacto">
+          <HashLink smooth to="/contacto" onClick={handleClick}>
             Contactenos
           </HashLink>
 
