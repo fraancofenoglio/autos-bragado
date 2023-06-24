@@ -129,6 +129,13 @@ nav svg {
   color: #f8f9ff;
   text-shadow: 2px 2px 2px #3b3b3b;
   box-shadow: 1px 1px 5px #c4c2c2;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.title button:hover {
+  box-shadow: 0px 0px 5px 0px inset rgba(0,0,0,0.6);
+
 }
 
 .search-section {
@@ -340,7 +347,7 @@ nav svg {
   border: 2px solid #f8f9ff;
   box-shadow: none;
   text-shadow: 1px 1px 1px #3b3b3b;
-
+  cursor: pointer;
 }
 .buscador-icons {
   width: 100%;
@@ -419,6 +426,10 @@ nav svg {
   box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.6);
 
 }
+.sucursal-card button:hover {
+  cursor: pointer;
+  box-shadow: 0px 2px 8px 0px inset rgba(0,0,0,0.6);
+}
 
 footer {
   display: flex;
@@ -481,6 +492,8 @@ footer h3 {
   font-family: 'Oswald', sans-serif;
   color: #5d5d60;
   font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .form-container-footer textarea {
@@ -506,6 +519,56 @@ footer h3 {
 .form-footer-button:hover {
   box-shadow: none;
 }
+
+
+@media only screen and (min-width: 650px) {
+  .header {
+    height: 350px;
+  }
+
+  .slider {
+    height: 350px;
+  }
+  .slider img {
+    height: auto;
+  }
+  .title h1 {
+    padding: 5%;
+    font-size: 40px;
+  }
+
+  .search-section input {
+    font-size: 17px;
+    font-family: 'Oswald', sans-serif;
+    color: #5d5d60;
+  }
+
+  .mini-presentacion-texto {
+    font-size: 30px;
+  }
+
+  .oferta {
+    height: 350px;
+  }
+  .oferta img {
+    height: 350px;
+  }
+  .oferta-texto {
+    height: 350px;
+  }
+  .oferta-texto h3 {
+    font-size: 40px;
+  }
+
+  .buscador-formulario select {
+    font-size: 18px;
+  }
+  .rango-precios {
+    font-size: 18px;
+  }
+
+}
+
 
 
 @media only screen and (min-width: 800px){
