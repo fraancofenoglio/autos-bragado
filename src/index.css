@@ -149,7 +149,7 @@ nav svg {
 .search-form {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: #c8c8c8;
   width: 70%;
   height: 40px;
@@ -160,7 +160,8 @@ nav svg {
   background:none;
   border: none;
   height: 40px;
-  width: 40px;
+  width: 55px;
+  cursor: pointer;
 }
 
 .search-section input {
@@ -302,13 +303,15 @@ nav svg {
   outline: 3px solid #949497;
 }
 
-.buscador-formulario hr {
-  width: 95%;
-  margin-bottom: 5%;
+.inputs-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .rango-precios {
-  width: 85%;
+  width: 100%;
   height: 40px;
   border: none;
   border-bottom: 2px solid #EB5E28;
@@ -322,8 +325,11 @@ nav svg {
 }
 
 .buscador-formulario span {
+  width: 85%;
   color: #EB5E28;
   text-shadow: 0px 0px 1px #3b3b3b;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-search-btn {
@@ -572,15 +578,124 @@ footer h3 {
 
 
 @media only screen and (min-width: 800px){
-  .slider {
-      min-height: 70vh;
-      height: auto;
-      margin-bottom: 2%;
+
+  .oferta {
+    height: 450px;
   }
-  .slider img {
-      width: 50vw;
+  .oferta img {
+    height: 450px;
+  }
+  .oferta-texto {
+    height: 450px;
+  }
+
+  .buscador-completo {
+    bottom: 40px;
   }
 }
+
+@media only screen and (min-width: 900px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+  }
+
+  .nav-desktop {
+    display: flex;
+    width: 60%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .nav-desktop a {
+    position: relative;
+    text-decoration: none;
+    color: #5d5d60;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    padding: 10px;
+  }
+  .nav-desktop a:hover {
+
+    color: #EB5E28;
+
+  }
+
+  .search-form {
+    width: 50%;
+  }
+
+  .mini-presentacion {
+    height: 300px;
+  }
+
+  .mini-presentacion-texto {
+    font-size: 37px;
+    margin-bottom: 4%;
+  }
+
+  .oferta {
+    height: 500px;
+  }
+  .oferta img {
+    height: 500px;
+  }
+  .oferta-texto {
+    height: 500px;
+  }
+  .buscador-completo {
+    bottom: 60px;
+  }
+
+  .inputs-container {
+    display: grid;
+    grid-template-columns: repeat(3, 30vw);
+    width: 100%;
+    row-gap: 40px;
+  }
+
+  .inputs-container select, .inputs-container span {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .inputs-container span {
+  }
+
+  .rango-precios {
+    width: 100%;
+    margin-bottom: 15%;
+  }
+
+  .sucursales h2 {
+    font-size: 40px;
+  }
+
+  .sucursal-card {
+    width: 60%;
+  }
+  .sucursal-card img {
+    width: 100%;
+  }
+
+  .footer-links {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .footer-links a {
+    font-size: 25px;
+  }
+
+  footer h3 {
+    font-size: 25px;
+  }
+
+  .form-container-footer input, .form-container-footer textarea {
+    width: 50%;
+  }
+}
+
 @keyframes slide-img {
   0% {
       margin-left: 0;
