@@ -453,12 +453,14 @@ footer h3 {
 }
 
 .footer-links {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-bottom: 2px groove #3b3b3b;
   padding: 15px 0px;
+  background-color: #3b3b3b;
+
 }
 
 .footer-links a {
