@@ -22,7 +22,6 @@ const NavMobile = () => {
       }
     }
 
-    console.log(widthChange)
   return (
     <nav>
         <div className="nav-container">

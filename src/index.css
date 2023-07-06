@@ -291,6 +291,7 @@ nav svg {
   border: 0;
   border-bottom: 2px solid #EB5E28;
   text-align: center;
+  font-size: 15px;
   font-family: 'Oswald', sans-serif;
   color: #5d5d60;
   margin-bottom: 10%;
@@ -525,6 +526,57 @@ footer h3 {
 .form-footer-button:hover {
   box-shadow: none;
 }
+
+.form-compra-buscador {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form-compra-buscador input, .form-compra-buscador select {
+  width: 100%;
+  margin-bottom: 10%;
+  font-size: 15px;
+
+}
+
+.form-compra-buscador span {
+  font-family: 'Oswald', sans-serif;
+  color: #5d5d60;
+  text-align: center;
+  margin-bottom: 5%;
+  font-size: 15px;
+}
+
+.form-compra-buscador strong {
+  color: #EB5E28;
+}
+
+.compra-select {
+  height: 40px;
+  background-color: #b6b4b352;
+  border: 0;
+  border-bottom: 2px solid #EB5E28;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  color: #5d5d60;
+  border-radius: 0px;
+}
+
+.compra-select:focus {
+  outline: 3px solid #949497;
+}
+
+.rangos {
+  height: 5px;
+  margin-bottom: 12% !important;
+}
+
+.form-compra-buscador span:first-of-type{
+  margin-top: 3%;
+}
+
 
 
 @media only screen and (min-width: 650px){
