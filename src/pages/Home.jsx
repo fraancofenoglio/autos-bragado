@@ -13,6 +13,7 @@ const Home = () => {
     const [modelo, setModelo] = useState("")
     const [precioMin, setPrecioMin] = useState()
     const [precioMax, setPrecioMax] = useState()
+    
   return (
     <>
         <Header/>

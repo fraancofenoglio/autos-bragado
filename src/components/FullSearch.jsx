@@ -7,10 +7,10 @@ const FullSearch = ({state, setState}) => {
   
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(precioMin, marca, modelo, precioMax)
   }
   return (
-    <div className="buscador-completo">
+    <>
+      <div className="buscador-completo">
 
         <form className="buscador-formulario" onSubmit={handleSubmit}>
           <div className="buscador-icons">
@@ -49,11 +49,11 @@ const FullSearch = ({state, setState}) => {
             </select>
 
             <select>
-              <option value={"nafta"}>Todos los combustibles</option>
-              <option value={"nafta"}>Nafta</option>
-              <option value={"diesel"}>Diésel</option>
-              <option value={"gnc"}>GNC</option>
-              <option value={"electrico"}>Eléctrico</option>
+            <option value={""}>Kilometraje</option>
+              <option value={20000}>Menor a 20000km</option>
+              <option value={50000}>Menor a 50000km</option>
+              <option value={80000}>Menor a 80000km</option>
+              <option value={100000}>Menor a 100000km</option>
             </select>
 
 
@@ -67,6 +67,8 @@ const FullSearch = ({state, setState}) => {
 
         </form>
       </div>
+      {marca + modelo}
+    </>
   )
 }
 
