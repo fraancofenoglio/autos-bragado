@@ -579,6 +579,76 @@ footer h3 {
 }
 
 
+.resultados-busqueda {
+  display: grid;
+  grid-template-columns: repeat(2, 50vw);
+  width: 100vw;
+  /* row-gap: 5px; */
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 45vw;
+  height: auto;
+  min-height: 250px;
+  background-color: #f8f9ff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+  
+  
+  margin-bottom: 15%;
+}
+.card-img {
+  width: 45vw;
+  border-radius: 10px 10px 0px 0px;
+}
+.card-title {
+  font-size: 18px;
+  color: #27272a;
+  margin: 5px 0px;
+  font-family: 'Oswald', sans-serif;
+
+}
+.card span {
+  color: #949497;
+  font-size: 15px;
+}
+.card-info {
+  font-size: 15px;
+  padding: 0.5%;
+  text-align: center;
+  margin: 5px 0px;
+  color: #EB5E28;
+}
+.card-km {
+  color: #EB5E28;
+  font-size: 15px;
+  font-weight: 500;
+}
+.card-precio {
+  color: #3b3b3b;
+  margin: 7px 0px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Oswald', sans-serif;
+
+}
+.card-button {
+  width: 80px;
+  height: 30px;
+  margin-bottom: 7%;
+  border: none;
+  border-radius: 10px;
+  background-color: #EB5E28;
+  color: #f8f9ff;
+  font-family: 'Oswald', sans-serif;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 1px 1px 1px #3b3b3b;
+}
+
+
 
 @media only screen and (min-width: 650px){
   .header {
