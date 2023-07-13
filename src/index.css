@@ -637,7 +637,7 @@ footer h3 {
 }
 .card-button {
   width: 80px;
-  height: 30px;
+  height: 35px;
   margin-bottom: 7%;
   border: none;
   border-radius: 10px;
@@ -646,6 +646,7 @@ footer h3 {
   font-family: 'Oswald', sans-serif;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
   text-shadow: 1px 1px 1px #3b3b3b;
+  cursor: pointer;
 }
 
 
@@ -696,6 +697,18 @@ footer h3 {
     font-size: 18px;
   }
 
+  .card-title {
+    font-size: 22px;
+  }
+  .card span, .card-info, .card-km, .card-precio {
+    font-size: 18px;
+  }
+  .card-button {
+    font-size: 20px;
+    margin-top: 15px;
+    height: 40px;
+  }
+
 }
 
 
@@ -714,6 +727,18 @@ footer h3 {
 
   .buscador-completo {
     bottom: 40px;
+  }
+
+  .form-compra-buscador select {
+    margin-bottom: 5%;
+    font-size: 17px;
+  }
+  .form-compra-buscador span {
+    font-size: 17px;
+  }
+  .rangos {
+    margin-bottom: 5% !important;
+    
   }
 }
 

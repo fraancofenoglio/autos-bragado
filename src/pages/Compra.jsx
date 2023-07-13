@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SimpleSearch from "../components/SimpleSearch";
 import {autos} from '../autos.js';
+import Footer from "../components/Footer";
 
 const Compra = () => {
 
@@ -20,8 +21,6 @@ const Compra = () => {
     
     const marcasUnicas = Array.from(new Set(autos.map((auto) => auto.marca)));
     const modelosUnicos = Array.from(new Set(autos.filter(auto => auto.marca.toLowerCase() === MARCA).map(auto => auto.modelo)));
-
-
 
     const marcaFilter = auto => MARCA ? auto.marca.toLowerCase() === MARCA : auto;
 
@@ -118,9 +117,11 @@ const Compra = () => {
                     ))
                 }
                 </>
-                : <></>
+                : <>No hay resultados que coincidan con su búsqueda.</>
             }
         </section>
+
+        <Footer></Footer>
     </>
   )
 }
