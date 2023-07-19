@@ -47,7 +47,7 @@ const Compra = () => {
   return (
     <>
         <SimpleSearch/>
-
+        <div className="compra-container">
         <form className="form-compra-buscador" onSubmit={handleSubmit}>
 
             <select className="compra-select" onChange={ e => setMARCA(e.target.value.toLowerCase())}>
@@ -68,7 +68,7 @@ const Compra = () => {
             <select className="compra-select" onChange={ e => setCOMBUSTIBLE(e.target.value.toLowerCase())}>
               <option value={""}>Todos los combustibles</option>
               <option value={"nafta"}>Nafta</option>
-              <option value={"diesel"}>Diésel</option>
+              <option value={"gasoil"}>Gasoil</option>
               <option value={"gnc"}>GNC</option>
               <option value={"electrico"}>Eléctrico</option>
             </select>
@@ -120,6 +120,8 @@ const Compra = () => {
                 : <>No hay resultados que coincidan con su búsqueda.</>
             }
         </section>
+
+       </div>
 
         <Footer></Footer>
     </>

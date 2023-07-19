@@ -6,13 +6,13 @@ const Contacto = () => {
 
         <div id="contacto" className="form-container-footer">
         <form>
-            <input type="text" placeholder="Nombre"/>
+            <input type="text" placeholder="Nombre" required/>
 
-            <input type="email" placeholder="Email"/>
+            <input type="email" placeholder="Email"required/>
 
-            <input type="number" placeholder="Teléfono"/>
+            <input type="tel" placeholder="Teléfono"required/>
 
-            <textarea rows="4" cols="40" placeholder="Consulta"></textarea>
+            <textarea rows="4" cols="40" placeholder="Consulta" required></textarea>
 
             <input type="submit" value="ENVIAR" className="form-footer-button"/>
         </form>

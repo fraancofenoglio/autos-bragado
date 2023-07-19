@@ -563,6 +563,7 @@ footer h3 {
   font-family: 'Oswald', sans-serif;
   color: #5d5d60;
   border-radius: 0px;
+  cursor: pointer;
 }
 
 .compra-select:focus {
@@ -572,6 +573,7 @@ footer h3 {
 .rangos {
   height: 5px;
   margin-bottom: 12% !important;
+  cursor: pointer;
 }
 
 .form-compra-buscador span:first-of-type{
@@ -647,6 +649,7 @@ footer h3 {
   box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
   text-shadow: 1px 1px 1px #3b3b3b;
   cursor: pointer;
+  font-size: 20px;
 }
 
 
@@ -837,10 +840,48 @@ footer h3 {
 
   footer h3 {
     font-size: 25px;
+    margin: 1.5% 0%;
   }
 
   .form-container-footer input, .form-container-footer textarea {
     width: 50%;
+    margin-bottom: 1.2%;
+  }
+  .form-footer-button {
+    margin-bottom: 3% !important;
+  }
+
+  .compra-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .form-compra-buscador {
+    width: 25%;
+    margin-left: 5%;
+
+  }
+  .resultados-busqueda {
+    width: 70%;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: center;
+  }
+  .card {
+    width: 90%;
+  }
+  .card-img {
+    width: 100%;
+  }
+  .card-title {
+    font-size: 20px;
+  }
+  .card-info, .card-precio, .card-km, .card span {
+    font-size: 15px;
+  }
+  .card-button {
+    margin-top: 5px;
+    height: 35px;
+    font-size: 18px;
   }
 }
 
