@@ -1,10 +1,48 @@
+import { useContext } from "react";
+import SearchContext from "../context/SearchContext";
 
 const SimpleSearch = () => {
+
+  const {setResultados, setAutosInput, autos, autosInput} = useContext(SearchContext);
+  
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if(autosInput){
+      setResultados(
+        autos.filter((auto) => {
+          if(auto.marca.toLowerCase() === autosInput) {
+            return auto.marca
+          } else if ( auto.modelo.toLowerCase() === autosInput){
+            return auto.modelo
+          } else return null
+        })
+      )
+
+      if (window.location.pathname === "/" && window.innerWidth > 800) {
+        
+        window.scroll({top: 1500, left: 0, behavior: "smooth"})
+      } else if (window.location.pathname === "/" && window.innerWidth < 800){
+        window.scroll({top: 1400, left: 0, behavior: "smooth"})
+      } else if (window.innerWidth < 800) {
+        window.scroll({top: 800, left: 0, behavior: "smooth"})
+      }
+    }
+
+
+
+    setAutosInput("")
+
+  }
+
   return (
     <section className="search-section">
 
-        <form className="search-form">
-        <input type="search" placeholder="Buscar por Marca o Modelo">
+        <form className="search-form" onSubmit={handleSubmit}>
+        <input type="search" placeholder="Buscar por Marca o Modelo" value={autosInput} onChange={(e) => {
+          setAutosInput(e.target.value)
+        }}>
             
         </input>
         <button type="submit">
@@ -13,7 +51,7 @@ const SimpleSearch = () => {
         </button>
         </form>
 
-  </section>
+    </section>
   )
 }
 

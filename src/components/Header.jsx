@@ -18,7 +18,7 @@ const Header = () => {
             <h1>
                 Comprá hoy tu próximo auto.
             </h1>
-            <button>
+            <button onClick={() =>window.location.href = "/compra"}>
                 Ver autos
             </button>
         </div>

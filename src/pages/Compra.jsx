@@ -1,38 +1,25 @@
-import { useState } from "react";
+import { useContext } from "react";
+import SearchContext from '../context/SearchContext'
 import SimpleSearch from "../components/SimpleSearch";
-import {autos} from '../autos.js';
 import Footer from "../components/Footer";
 
 const Compra = () => {
 
-    const [minPrice, setMinPrice] = useState(200000);
-    const [maxPrice, setMaxPrice] = useState(10000000);
-    const [minYear, setMinYear] = useState(2000);
-    const [maxYear, setMaxYear] = useState(2023);
-    const [MARCA, setMARCA] = useState("");
-    const [MODELO, setMODELO] = useState("");
-    const [COMBUSTIBLE, setCOMBUSTIBLE] = useState("");
-    const [KILOMETROS, setKILOMETROS] = useState(100000);
-
-    const [resultados, setResultados] = useState(autos);
-
-    // const {marca, modelo, combustible, transmision, motor, color, precio, año, km, descripcion, imagenes } = autos;
-
+  const { minPrice,setMinPrice,maxPrice,setMaxPrice,minYear,setMinYear,maxYear,setMaxYear,MARCA,setMARCA,MODELO,setMODELO,COMBUSTIBLE,setCOMBUSTIBLE,KILOMETROS,setKILOMETROS,resultados,setResultados,autos, marcasUnicas, modelosUnicos} = useContext(SearchContext);
     
-    const marcasUnicas = Array.from(new Set(autos.map((auto) => auto.marca)));
-    const modelosUnicos = Array.from(new Set(autos.filter(auto => auto.marca.toLowerCase() === MARCA).map(auto => auto.modelo)));
+
 
     const marcaFilter = auto => MARCA ? auto.marca.toLowerCase() === MARCA : auto;
 
     const modeloFilter = auto => MODELO ? auto.modelo.toLowerCase() === MODELO : auto;
 
-    const combustibleFilter = (auto) => COMBUSTIBLE ? auto.combustible.toLowerCase() === COMBUSTIBLE : auto;
-
-    const kmFilter = auto => KILOMETROS ? auto.km <= KILOMETROS : auto;
-
     const precioMinFilter = auto => minPrice ? auto.precio >= minPrice : auto;
 
     const precioMaxFilter = auto => maxPrice ? auto.precio <= maxPrice : auto;
+
+    const combustibleFilter = (auto) => COMBUSTIBLE ? auto.combustible.toLowerCase() === COMBUSTIBLE : auto;
+
+    const kmFilter = auto => KILOMETROS ? auto.km <= KILOMETROS : auto;
 
     const yearMinFilter = auto => minYear ? auto.year >= minYear : auto;
 

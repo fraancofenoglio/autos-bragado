@@ -595,6 +595,7 @@ footer h3 {
   width: 45vw;
   height: auto;
   min-height: 250px;
+  max-height: 350px;
   background-color: #f8f9ff;
   border-radius: 10px;
   box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
@@ -775,6 +776,9 @@ footer h3 {
 
   .search-form {
     width: 50%;
+  }
+  .search-section input {
+    width: 90%;
   }
 
   .mini-presentacion {

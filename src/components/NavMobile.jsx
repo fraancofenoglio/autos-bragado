@@ -1,11 +1,16 @@
-import { useState } from "react"
-import { HashLink } from 'react-router-hash-link'
+import { useState, useContext } from "react";
+import { HashLink } from 'react-router-hash-link';
+import SearchContext from "../context/SearchContext";
+
 
 const NavMobile = () => {
 
     const [open, setOpen] = useState(false);
     const [animation, setAnimation] = useState("");
     const [widthChange, setWidthChange] = useState(window.innerWidth);
+
+    const {setResultados, autos} = useContext(SearchContext);
+
     
     window.addEventListener("resize", ()=> {
       setWidthChange(window.innerWidth)
@@ -20,6 +25,8 @@ const NavMobile = () => {
         setAnimation("slide-out 0.1s cubic-bezier(0.755, 0.050, 0.855, 0.060) both")
         console.log("true")
       }
+
+      setResultados(autos)
     }
 
   return (
