@@ -12,9 +12,9 @@ const SimpleSearch = () => {
     if(autosInput){
       setResultados(
         autos.filter((auto) => {
-          if(auto.marca.toLowerCase() === autosInput) {
+          if(auto.marca.toLowerCase() === autosInput.toLowerCase()) {
             return auto.marca
-          } else if ( auto.modelo.toLowerCase() === autosInput){
+          } else if ( auto.modelo.toLowerCase() === autosInput.toLowerCase()){
             return auto.modelo
           } else return null
         })
