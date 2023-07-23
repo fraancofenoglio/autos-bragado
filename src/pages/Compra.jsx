@@ -2,10 +2,11 @@ import { useContext } from "react";
 import SearchContext from '../context/SearchContext'
 import SimpleSearch from "../components/SimpleSearch";
 import Footer from "../components/Footer";
+import ResultadosBusqueda from "../components/ResultadosBusqueda";
 
 const Compra = () => {
 
-  const { minPrice,setMinPrice,maxPrice,setMaxPrice,minYear,setMinYear,maxYear,setMaxYear,MARCA,setMARCA,MODELO,setMODELO,COMBUSTIBLE,setCOMBUSTIBLE,KILOMETROS,setKILOMETROS,resultados,setResultados,autos, marcasUnicas, modelosUnicos} = useContext(SearchContext);
+  const { minPrice,setMinPrice,maxPrice,setMaxPrice,minYear,setMinYear,maxYear,setMaxYear,MARCA,setMARCA,MODELO,setMODELO,COMBUSTIBLE,setCOMBUSTIBLE,KILOMETROS,setKILOMETROS,setResultados,autos, marcasUnicas, modelosUnicos} = useContext(SearchContext);
     
 
 
@@ -87,26 +88,7 @@ const Compra = () => {
 
         </form>
 
-        <section className="resultados-busqueda">
-            {
-             resultados && resultados.length !== 0 ?
-                <>
-                {resultados.map((auto, i) => (
-                    <div className="card" key={i}>
-                        <img className="card-img" src={auto.imagenes[0]} alt="" />
-                        <h4 className="card-title">{auto.marca + " " + auto.modelo}</h4>
-                        <span>{auto.motor}</span>
-                        <p className="card-info">{`${auto.year} / ${auto.combustible} / ${auto.transmision}`}</p>
-                        <p className="card-km">{` ${auto.km} km`}</p>
-                        <h4 className="card-precio">${auto.precio}</h4>
-                        <button className="card-button">VER</button>
-                    </div>
-                    ))
-                }
-                </>
-                : <>No hay resultados que coincidan con su búsqueda.</>
-            }
-        </section>
+        <ResultadosBusqueda/>
 
        </div>
 

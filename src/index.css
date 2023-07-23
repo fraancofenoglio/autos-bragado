@@ -431,7 +431,7 @@ nav svg {
   box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.6);
 
 }
-.sucursal-card button:hover {
+.sucursal-card button:hover, .card-button:hover {
   cursor: pointer;
   box-shadow: 0px 2px 8px 0px inset rgba(0,0,0,0.6);
 }
@@ -585,6 +585,7 @@ footer h3 {
   display: grid;
   grid-template-columns: repeat(2, 50vw);
   width: 100vw;
+  margin: 0 auto;
   /* row-gap: 5px; */
 }
 .card {
@@ -595,12 +596,10 @@ footer h3 {
   width: 45vw;
   height: auto;
   min-height: 250px;
-  max-height: 350px;
+  max-height: 400px;
   background-color: #f8f9ff;
   border-radius: 10px;
   box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
-  
-  
   margin-bottom: 15%;
 }
 .card-img {
@@ -651,6 +650,23 @@ footer h3 {
   text-shadow: 1px 1px 1px #3b3b3b;
   cursor: pointer;
   font-size: 20px;
+}
+
+.no-results {
+  margin: 5% 2.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95vw;
+  /* text-align: center; */
+  background-color: #f3807a;
+  border: 1px solid red;
+  color: #f8f9ff;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  height: 55px;
+  border-radius: 10px;
 }
 
 
@@ -872,6 +888,7 @@ footer h3 {
   }
   .card {
     width: 90%;
+    max-height: 400px;
   }
   .card-img {
     width: 100%;
@@ -886,6 +903,12 @@ footer h3 {
     margin-top: 5px;
     height: 35px;
     font-size: 18px;
+  }
+
+  .no-results {
+    margin: 5% 0% 20% 0%;
+    width: 300%;
+    font-size: 22px;
   }
 }
 
@@ -927,6 +950,10 @@ footer h3 {
   }
   .form-search-btn {
     height: 50px;
+  }
+
+  .card { 
+    max-height: 450px;
   }
 
   .sucursales h2 {

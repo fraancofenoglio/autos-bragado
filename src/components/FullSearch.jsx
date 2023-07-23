@@ -1,14 +1,28 @@
 import { useContext } from "react";
 import SearchContext from "../context/SearchContext";
+import { useNavigate } from "react-router-dom";
+
 
 const FullSearch = () => {
+
+  const navigate = useNavigate()
 
   const {minPrice,setMinPrice,maxPrice,setMaxPrice,MARCA,setMARCA,MODELO,setMODELO, KILOMETROS, setKILOMETROS, autos, setResultados, modelosUnicos, marcasUnicas} = useContext(SearchContext);
   
   const handleSubmit = (e) => {
     e.preventDefault()
-    setResultados(autos.filter(marcaFilter).filter(modeloFilter).filter(precioMinFilter).filter(precioMaxFilter).filter(kmFilter))
+    setResultados(autos.filter(marcaFilter).filter(modeloFilter).filter(precioMinFilter).filter(precioMaxFilter).filter(kmFilter));
+
+    navigate("/compra");
+    window.scroll(0,0)
+
+    setTimeout(() => {
+      
+      window.scroll({top: 800, left: 0, behavior: "smooth"})
+      console.log("se activa el 3")
+    }, 500);
   }
+
 
   const marcaFilter = auto => MARCA ? auto.marca.toLowerCase() === MARCA : auto;
 
@@ -42,7 +56,7 @@ const FullSearch = () => {
               </option>)}
             </select>
 
-            <select onChange={(e) => setMODELO(e.target.value.toLowerCase())}>
+            <select value={MODELO} onChange={(e) => setMODELO(e.target.value.toLowerCase())}>
               <option value={""}>Todos los modelos</option>
 
               {modelosUnicos.map((modelo, i) => (
@@ -64,7 +78,7 @@ const FullSearch = () => {
             <span>Hasta:
             <input type="number" placeholder="$" className="rango-precios" value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)}></input></span>
 
-            
+
           </div>
 
           <input id="prueba" className="form-search-btn" type="submit" value="BUSCAR"></input>

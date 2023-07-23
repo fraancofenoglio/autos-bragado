@@ -23,7 +23,6 @@ const NavMobile = () => {
         setAnimation("slide-in 0.4s ease-in-out both")
       } else {
         setAnimation("slide-out 0.1s cubic-bezier(0.755, 0.050, 0.855, 0.060) both")
-        console.log("true")
       }
 
       setResultados(autos)
