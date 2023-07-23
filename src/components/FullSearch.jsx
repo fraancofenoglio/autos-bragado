@@ -17,9 +17,9 @@ const FullSearch = () => {
     window.scroll(0,0)
 
     setTimeout(() => {
-      
-      window.scroll({top: 800, left: 0, behavior: "smooth"})
-      console.log("se activa el 3")
+      if (window.innerWidth < 800){
+        window.scroll({top: 800, left: 0, behavior: "smooth"})
+      }
     }, 500);
   }
 
