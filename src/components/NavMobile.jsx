@@ -11,6 +11,9 @@ const NavMobile = () => {
 
     const {setResultados, autos} = useContext(SearchContext);
 
+
+    //a veces cuando apreto algo arriba es como si apretara el menu, como si estuviera pero no se viera
+
     
     window.addEventListener("resize", ()=> {
       setWidthChange(window.innerWidth)

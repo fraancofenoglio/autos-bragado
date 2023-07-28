@@ -16,7 +16,7 @@ const Footer = () => {
             Busca tu auto
           </HashLink>
 
-          <HashLink smooth to="/vender">
+          <HashLink smooth to="/venta">
             Vende tu auto
           </HashLink>
 
