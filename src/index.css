@@ -1031,7 +1031,7 @@ footer h3 {
   0% {
     transform: translateY(-1000px);
     opacity: 0;
-    display: flex;
+    display: none;
     height: 0;
   }
   100% {
@@ -1055,7 +1055,7 @@ footer h3 {
   100% {
     transform: translateY(-1000px);
     opacity: 0;
-    display: flex;
+    display: none;
     height: 0;
 
   }

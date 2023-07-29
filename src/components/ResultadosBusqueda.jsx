@@ -4,7 +4,6 @@ const ResultadosBusqueda = () => {
 
     const {resultados, setResultados} = useContext(SearchContext);
 
-    
     useEffect(() => {
         if (window.location.pathname === "/") {
             
@@ -12,7 +11,6 @@ const ResultadosBusqueda = () => {
         }
         
     }, [setResultados])
-    console.log(resultados)
     
   return (
     <section className="resultados-busqueda">
