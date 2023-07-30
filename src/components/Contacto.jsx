@@ -1,7 +1,7 @@
 
 const Contacto = () => {
   return (
-    <>
+    <section className="contacto">
         <h3>Consultanos</h3>
 
         <div id="contacto" className="form-container-footer">
@@ -17,7 +17,7 @@ const Contacto = () => {
             <input type="submit" value="ENVIAR" className="form-footer-button"/>
         </form>
         </div>
-    </>
+    </section>
   )
 }
 

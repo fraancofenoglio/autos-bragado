@@ -1,4 +1,5 @@
 import Footer from "../components/Footer";
+import Contacto from "../components/Contacto";
 import FullSearch from "../components/FullSearch";
 import Header from "../components/Header";
 import Intro from "../components/Intro";
@@ -18,6 +19,7 @@ const Home = () => {
         <FullSearch/>
         <ResultadosBusqueda/>
         <Sucursales/>
+        <Contacto/>
         <Footer/>
     
     </>

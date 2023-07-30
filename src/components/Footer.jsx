@@ -1,11 +1,8 @@
 import { HashLink } from "react-router-hash-link"
-import Contacto from "./Contacto"
 
 const Footer = () => {
   return (
     <footer>
-
-        <Contacto/>
 
         <div className="footer-links">
           <HashLink smooth to="#">
