@@ -2,30 +2,27 @@ import { useState, useContext } from "react";
 import { HashLink } from 'react-router-hash-link';
 import SearchContext from "../context/SearchContext";
 
-
 const NavMobile = () => {
 
-    const [open, setOpen] = useState(false);
-    const [animation, setAnimation] = useState("");
-    const [widthChange, setWidthChange] = useState(window.innerWidth);
-
-    const {setResultados, autos} = useContext(SearchContext);
+  const [open, setOpen] = useState(false);
+  const [animation, setAnimation] = useState("");
+  const [widthChange, setWidthChange] = useState(window.innerWidth);
+  const {setResultados, autos} = useContext(SearchContext);
     
-    window.addEventListener("resize", ()=> {
-      setWidthChange(window.innerWidth)
-    })
+  window.addEventListener("resize", ()=> {
+    setWidthChange(window.innerWidth)
+  })
   
-    const handleClick = () => {
-      setOpen(!open)
+  const handleClick = () => {
+    setOpen(!open)
   
-      if (open === false) {
-        setAnimation("slide-in 0.4s ease-in-out both")
-      } else {
-        setAnimation("slide-out 0.1s cubic-bezier(0.755, 0.050, 0.855, 0.060) both")
-      }
-
-      setResultados(autos)
+    if (open === false) {
+      setAnimation("slide-in 0.4s ease-in-out both")
+    } else {
+      setAnimation("slide-out 0.1s cubic-bezier(0.755, 0.050, 0.855, 0.060) both")
     }
+    setResultados(autos)
+  }
 
   return (
     <nav>
@@ -33,7 +30,6 @@ const NavMobile = () => {
           <div className="logo">
             <a href="/">Autos Bragado</a>
           </div>
-
           {
             widthChange < 900 ? 
 
@@ -44,11 +40,10 @@ const NavMobile = () => {
           }
         </div>
 
-
         {
           widthChange < 900 ? 
 
-          <div className="navegacion" style={{animation: animation}}>
+          <div className="navegacion" style={{animation: animation, display: !open ? "none" : "flex"}}>
 
             <a href="/" onClick={handleClick}>Inicio</a>
 
@@ -63,7 +58,6 @@ const NavMobile = () => {
             <HashLink smooth to="/contacto" onClick={handleClick}>
               Contactenos
             </HashLink>
-
 
           </div> :
 
