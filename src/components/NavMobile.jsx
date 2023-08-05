@@ -48,11 +48,11 @@ const NavMobile = () => {
             <a href="/" onClick={handleClick}>Inicio</a>
 
             <HashLink smooth to="/compra" onClick={handleClick}>
-              Busca tu auto
+              Buscá tu auto
             </HashLink>
 
             <HashLink smooth to="/venta" onClick={handleClick}>
-              Vende tu auto
+              Vendé tu auto
             </HashLink>
 
             <HashLink smooth to="/contacto" onClick={handleClick}>
@@ -65,11 +65,11 @@ const NavMobile = () => {
             <a href="/" onClick={handleClick}>Inicio</a>
 
             <HashLink smooth to="/compra" onClick={handleClick}>
-              Busca tu auto
+              Buscá tu auto
             </HashLink>
 
             <HashLink smooth to="/venta" onClick={handleClick}>
-              Vende tu auto
+              Vendé tu auto
             </HashLink>
 
             <HashLink smooth to="/contacto" onClick={handleClick}>

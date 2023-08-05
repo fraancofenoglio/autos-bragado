@@ -211,7 +211,7 @@ nav svg {
   box-shadow: 0px 0px 10px 1px rgba(71, 71, 71, 0.75) inset;
 }
 
-.mini-presentacion svg {
+.mini-presentacion svg, .venta-container svg {
   background-color: #eb5f2852;
   fill: #3b3b3b;
   border-radius: 50%;
@@ -273,7 +273,7 @@ nav svg {
   height: auto;
 }
 
-.buscador-formulario {
+.buscador-formulario, .venta-form {
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -281,7 +281,6 @@ nav svg {
   background-color: #f8f9ff;
   border-radius: 10px;
   box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.6);
-
 }
 
 .buscador-formulario select {
@@ -676,6 +675,94 @@ footer {
   border-radius: 10px;
 }
 
+.venta-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.header-venta {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 240px;
+}
+
+.header-venta img {
+  width: 100%;
+  height: 240px;
+}
+
+.venta-texto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 240px;
+  position: absolute;
+  background-color: #eb5f2852;
+  padding: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+.venta-texto h3 {
+  font-size: 30px;
+  font-family: 'Oswald', sans-serif;
+  color: #f8f9ff;
+  font-weight: 900;
+  text-align: center;
+  text-shadow: 2px 2px 2px #27272a;
+}
+
+.venta-form {
+  margin: 20px auto;
+  padding: 20px 0px;
+}
+.venta-form input {
+  width: 85%;
+  height: 40px;
+  background-color: #b6b4b352;
+  border: 0;
+  border-bottom: 2px solid #EB5E28;
+  text-align: center;
+  font-size: 15px;
+  font-family: 'Oswald', sans-serif;
+  color: #5d5d60;
+  margin-bottom: 10%;
+  border-radius: 0px;
+}
+#venta-btn {
+  width: 150px !important;
+  height: 40px;
+  font-size: 20px !important;
+  background-color: #f8f9ff;
+  border: 2px solid #EB5E28;
+  border-radius: 10px;
+  font-family: 'Oswald', sans-serif;
+  color: #EB5E28;
+  margin-bottom: 5%;
+  box-shadow: 2px 2px 5px #EB5E28;
+  transition: 0.3s;
+  text-shadow: 1px 1px 1px #3b3b3b;
+}
+
+.venta-p {
+  color: #5d5d60;
+  font-family: 'Oswald', sans-serif;
+  padding: 5%;
+  font-size: 18px;
+  text-align: center;
+  padding-bottom: 2%;
+}
+
+.container-inputs-venta {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
 
 
 @media only screen and (min-width: 650px){
@@ -704,13 +791,7 @@ footer {
     font-size: 30px;
   }
 
-  .oferta {
-    height: 350px;
-  }
-  .oferta img {
-    height: 350px;
-  }
-  .oferta-texto {
+  .oferta, .header-venta, .oferta img, .header-venta img, .oferta-texto, .venta-texto {
     height: 350px;
   }
   .oferta-texto h3 {
@@ -742,16 +823,12 @@ footer {
 
 @media only screen and (min-width: 800px){
 
-  .oferta {
+  .oferta, .oferta img, .oferta-texto {
     height: 450px;
   }
-  .oferta img {
-    height: 450px;
+  .header-venta, .venta-texto, .header-venta img {
+    height: 350px;
   }
-  .oferta-texto {
-    height: 450px;
-  }
-
   .buscador-completo {
     bottom: 40px;
   }
@@ -813,29 +890,28 @@ footer {
     margin-bottom: 4%;
   }
 
-  .oferta {
+  .oferta, .oferta img, .oferta-texto {
     height: 500px;
   }
-  .oferta img {
-    height: 500px;
-  }
-  .oferta-texto {
-    height: 500px;
-  }
+
   .buscador-completo {
     bottom: 60px;
   }
 
-  .inputs-container {
+  .inputs-container, .container-inputs-venta {
     display: grid;
     grid-template-columns: repeat(3, 30vw);
     width: 100%;
     row-gap: 40px;
   }
 
-  .inputs-container select, .inputs-container span {
+  .inputs-container select, .inputs-container span, .container-inputs-venta input {
     margin: 0 auto;
     text-align: center;
+  }
+  #venta-btn {
+    margin-top: 5%;
+    margin-bottom: 3%;
   }
 
   .rango-precios {
@@ -916,6 +992,10 @@ footer {
     margin: 5% 0% 20% 0%;
     width: 300%;
     font-size: 22px;
+  }
+
+  .venta-texto h3{
+    font-size: 40px;
   }
 }
 
@@ -1007,6 +1087,18 @@ footer {
   .contacto h3 {
     font-size: 40px;
     margin: 1.5% 0%;
+  }
+
+  .header-venta {
+    overflow: hidden;
+  }
+
+  .header-venta img {
+    height: 450px;
+  }
+
+  .venta-p {
+    font-size: 22px;
   }
 
 }
