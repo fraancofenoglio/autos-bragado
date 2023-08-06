@@ -17,7 +17,7 @@ const Footer = () => {
             Vende tu auto
           </HashLink>
 
-          <HashLink smooth to="#contacto">
+          <HashLink smooth to="/contacto">
             Contactenos
           </HashLink>
         </div>

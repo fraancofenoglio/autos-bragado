@@ -12,7 +12,6 @@ const Venta = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(marca)
     }
 
   return (
