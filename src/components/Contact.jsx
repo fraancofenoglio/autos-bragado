@@ -1,5 +1,5 @@
 
-const Contacto = () => {
+const Contact = () => {
   return (
     <section className="contacto">
         <h3>Consultanos</h3>
@@ -21,4 +21,4 @@ const Contacto = () => {
   )
 }
 
-export default Contacto
+export default Contact

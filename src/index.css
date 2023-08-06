@@ -706,7 +706,7 @@ footer {
   text-align: center;
 }
 
-.venta-texto h3 {
+.venta-texto h3, .contacto-texto h4 {
   font-size: 30px;
   font-family: 'Oswald', sans-serif;
   color: #f8f9ff;
@@ -761,6 +761,29 @@ footer {
   flex-direction: column;
   width: 100%;
   align-items: center;
+}
+
+.contacto-header {
+  width: 100vw;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacto-header img {
+  width: 100vw;
+  height: 240px;
+}
+
+.contacto-texto {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 240px;
+  background-color: #eb5f2852;
 }
 
 
@@ -996,6 +1019,13 @@ footer {
 
   .venta-texto h3{
     font-size: 40px;
+  }
+
+  .contacto-header {
+    overflow: hidden;
+  }
+  .contacto-header img {
+    height: 500px;
   }
 }
 
