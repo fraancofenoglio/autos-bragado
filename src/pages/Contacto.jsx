@@ -15,9 +15,11 @@ const Contacto = () => {
         <div className='redes'>
             <h4>Nuestra redes sociales:</h4>
             <div className='redes-container'>
-                <a href="www.instagram.com"><span>Instagram:</span> AutosBragado</a>
-                <a href="www.facebook.com"><span>Facebook: </span> Autos Bragado</a>
-                <a href="mailto:autosbragado@autos.com"><span>Email: </span> autosbragado@autos.com</a>
+                <a href="https://www.instagram.com" target='_blank' rel='noreferrer'><span>Instagram:</span> AutosBragado</a>
+
+                <a href="https://www.facebook.com" target='_blank' rel='noreferrer'><span>Facebook: </span> Autos Bragado</a>
+
+                <a href="mailto:autosbragado@autos.com" target='_blank' rel='noreferrer'><span>Email: </span> autosbragado@autos.com</a>
             </div>
         </div>
         <Contact/>
