@@ -786,6 +786,41 @@ footer {
   background-color: #eb5f2852;
 }
 
+.redes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: 220px;
+  font-family: 'Oswald', sans-serif;
+
+}
+
+.redes h4 {
+  color: #5d5d60;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.redes-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 120px;
+}
+
+.redes-container a {
+  text-decoration: none;
+  text-align: center;
+  color: #EB5E28;
+  font-size: 20px;
+}
+
+.redes-container span {
+  color: #5d5d60;
+}
+
 
 
 @media only screen and (min-width: 650px){
@@ -817,7 +852,7 @@ footer {
   .oferta, .header-venta, .oferta img, .header-venta img, .oferta-texto, .venta-texto {
     height: 350px;
   }
-  .oferta-texto h3 {
+  .oferta-texto h3, .contacto-texto h4 {
     font-size: 40px;
   }
 
@@ -826,6 +861,10 @@ footer {
   }
   .rango-precios {
     font-size: 18px;
+  }
+
+  .card {
+    max-height: none;
   }
 
   .card-title {
@@ -1023,9 +1062,25 @@ footer {
 
   .contacto-header {
     overflow: hidden;
+    height: 300px;
   }
   .contacto-header img {
     height: 500px;
+  }
+  .contacto-texto {
+    height: 300px;
+  }
+
+  .redes-container {
+    width: 60%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .redes-container a {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
   }
 }
 
