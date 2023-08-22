@@ -3,6 +3,9 @@ import Home from '../pages/Home';
 import Compra from '../pages/Compra';
 import Venta from '../pages/Venta';
 import Contacto from '../pages/Contacto';
+import Admin from '../pages/Admin';
+import ProtectedRoute from '../components/ProtectedRoute';
+import Login from '../pages/Login';
 
 const MainRoutes = () => {
   return (
@@ -11,6 +14,15 @@ const MainRoutes = () => {
         <Route path='/compra' element={<Compra/>}/>
         <Route path='/venta' element={<Venta/>}/>
         <Route path='/contacto' element={<Contacto/>}/>
+        <Route path='/login' element={<Login/>}/>
+
+        <Route path='/admin' element={
+
+          <ProtectedRoute redirectTo={"/login"}>
+            <Admin/>
+          </ProtectedRoute>
+          }>
+        </Route> 
 
         <Route path='*' element={<h1>Not Found</h1>}/>
     </Routes>

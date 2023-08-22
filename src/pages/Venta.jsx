@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import Footer from '../components/Footer'
+import { useContext } from 'react';
+import SearchContext from '../context/SearchContext';
 
 const Venta = () => {
+    const {user} = useContext(SearchContext);
 
     const [marca, setMarca] = useState("");
     const [modelo, setModelo] = useState("");
@@ -13,6 +16,7 @@ const Venta = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
     }
+    console.log("venta", user)
 
   return (
     <>

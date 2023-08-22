@@ -7,8 +7,7 @@ const NavMobile = () => {
   const [open, setOpen] = useState(false);
   const [animation, setAnimation] = useState("");
   const [widthChange, setWidthChange] = useState(window.innerWidth);
-  const {setResultados, autos} = useContext(SearchContext);
-    
+  const {setResultados, autos, user} = useContext(SearchContext);
   window.addEventListener("resize", ()=> {
     setWidthChange(window.innerWidth)
   })

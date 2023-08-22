@@ -273,7 +273,7 @@ nav svg {
   height: auto;
 }
 
-.buscador-formulario, .venta-form {
+.buscador-formulario, .venta-form, .login-form {
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -283,7 +283,7 @@ nav svg {
   box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.6);
 }
 
-.buscador-formulario select {
+.buscador-formulario select, .login-form input {
   width: 85%;
   height: 40px;
   background-color: #b6b4b352;
@@ -297,8 +297,11 @@ nav svg {
   border-radius: 0px;
 }
 
-.buscador-formulario select:focus {
+.buscador-formulario select:focus, .login-form input:focus, .rango-precios:focus {
   outline: 3px solid #949497;
+  border-bottom: 4px solid #EB5E28;
+  outline: none;
+
 }
 
 .inputs-container {
@@ -322,7 +325,7 @@ nav svg {
   border-radius: 0px;
 }
 
-.buscador-formulario span {
+.buscador-formulario span, .login-form span {
   width: 85%;
   color: #EB5E28;
   text-shadow: 0px 0px 1px #3b3b3b;
@@ -330,9 +333,9 @@ nav svg {
   flex-direction: column;
 }
 
-.form-search-btn {
+.form-search-btn, .login-btn {
   width: 150px !important;
-  height: 40px;
+  height: 40px !important;
   font-size: 20px !important;
   background-color: #f8f9ff;
   border: 2px solid #EB5E28;
@@ -345,7 +348,7 @@ nav svg {
   text-shadow: 1px 1px 1px #3b3b3b;
 
 }
-.form-search-btn:hover {
+.form-search-btn:hover, .login-btn:hover{
   background-color: #EB5E28;
   color: #f8f9ff;
   border: 2px solid #f8f9ff;
@@ -794,10 +797,9 @@ footer {
   height: auto;
   min-height: 220px;
   font-family: 'Oswald', sans-serif;
-
 }
 
-.redes h4 {
+.redes h4, .login-container h4 {
   color: #5d5d60;
   font-size: 25px;
   margin-bottom: 20px;
@@ -821,7 +823,71 @@ footer {
   color: #5d5d60;
 }
 
+.login-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.login-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-form {
+  min-height: 200px;
+  padding-top: 30px;
+}
+
+.login-container h4, .login-form input, .login-btn {
+  font-family: 'Oswald', sans-serif;
+}
+
+.login-error {
+  font-family: 'Oswald', sans-serif;
+  color: #df1c0e !important;
+  font-size: larger;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.lds-dual-ring {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #EB5E28 transparent #EB5E28 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 @media only screen and (min-width: 650px){
   .header {
@@ -1081,6 +1147,20 @@ footer {
     height: 60px;
     display: flex;
     flex-direction: column;
+  }
+
+  .login-container h4 {
+    margin-top: 2%;
+    margin-bottom: 4%;
+  }
+  .login-form {
+    width: 50%;
+  }
+  .login-form input {
+    margin-bottom: 3%;
+  }
+  .login-btn {
+    margin-top: 3%;
   }
 }
 

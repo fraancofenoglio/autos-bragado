@@ -6,8 +6,9 @@ import ResultadosBusqueda from "../components/ResultadosBusqueda";
 
 const Compra = () => {
 
-  const { minPrice,setMinPrice,maxPrice,setMaxPrice,minYear,setMinYear,maxYear,setMaxYear,MARCA,setMARCA,MODELO,setMODELO,COMBUSTIBLE,setCOMBUSTIBLE,KILOMETROS,setKILOMETROS,setResultados,autos, marcasUnicas, modelosUnicos} = useContext(SearchContext);
+  const { minPrice,setMinPrice,maxPrice,setMaxPrice,minYear,setMinYear,maxYear,setMaxYear,MARCA,setMARCA,MODELO,setMODELO,COMBUSTIBLE,setCOMBUSTIBLE,KILOMETROS,setKILOMETROS,setResultados,autos, marcasUnicas, modelosUnicos, user} = useContext(SearchContext);
     
+  console.log("compra", user)
 
 
     const marcaFilter = auto => MARCA ? auto.marca.toLowerCase() === MARCA : auto;

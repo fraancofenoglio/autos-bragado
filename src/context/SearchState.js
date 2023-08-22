@@ -20,6 +20,7 @@ const SearchState = ({children}) => {
     const marcasUnicas = Array.from(new Set(autos.map((auto) => auto.marca)));
     const modelosUnicos = Array.from(new Set(autos.filter(auto => auto.marca.toLowerCase() === MARCA).map(auto => auto.modelo)));
 
+    const [user, setUser] = useState()
 
   return (
     <SearchContext.Provider
@@ -46,7 +47,9 @@ const SearchState = ({children}) => {
             setResultados,
             autos,
             marcasUnicas,
-            modelosUnicos
+            modelosUnicos,
+            user,
+            setUser
         }}
     >
         {children}
