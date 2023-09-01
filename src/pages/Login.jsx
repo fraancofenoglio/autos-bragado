@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase/config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import Loader from "../components/Loader";
+import { useEffect } from "react";
 
 const Login = () => {
 
@@ -14,11 +15,17 @@ const Login = () => {
     const {setUser} = useContext(SearchContext);
     const navigate = useNavigate();
     
-    const userstorage = localStorage.getItem("user")
-    if (userstorage) {
-        setUser(JSON.parse(userstorage))
-        navigate("/admin")
-    }
+    
+    useEffect(() => {
+        
+        const userstorage = localStorage.getItem("user")
+    
+        if (userstorage) {
+            setUser(JSON.parse(userstorage))
+            navigate("/admin")
+        }
+    })
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
