@@ -798,7 +798,7 @@ footer {
   font-family: 'Oswald', sans-serif;
 }
 
-.redes h4, .login-container h4, .admin-container h4 {
+.redes h4, .login-container h4, .admin-container h4, .edit-title {
   color: #5d5d60;
   font-size: 25px;
   margin-bottom: 20px;
@@ -927,7 +927,7 @@ footer {
   margin-bottom: 3%;
 }
 
-.admin-container h5 {
+.admin-container h5, .edit-container h5 {
   font-size: 16px;
   color: #5d5d60;
   margin-bottom: 5%;
@@ -962,6 +962,7 @@ footer {
 .form-add-container textarea {
   width: 85%;
   height: auto;
+  padding: 0% 3%;
 }
 
 .form-add-container button {
@@ -983,6 +984,34 @@ footer {
   flex-direction: column;
   align-items: center;
   width: 100%;
+}
+
+.admin-nav {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px #5d5d60 outset;
+  margin-bottom: 2%;
+}
+
+.admin-nav button {
+  font-family: 'Oswald', sans-serif;
+  color: #5d5d60;
+  width: 200px;
+  height: 48px;
+  /* background-color: transparent; */
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.edit-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @keyframes lds-dual-ring {
@@ -1070,7 +1099,7 @@ footer {
     width: 200px;
     height: 150px;
   }
-  .admin-container h5 {
+  .admin-container h5, .edit-container h5 {
     font-size: 19px;
   }
   .span-add {
@@ -1078,9 +1107,12 @@ footer {
     margin-bottom: 2%;
     width: 80%;
   }
-  .form-add-container input, .form-add-container select {
+  .form-add-container input, .form-add-container select, .form-add-container textarea {
     width: 80%;
     margin-bottom: 5%;
+  }
+  .admin-nav {
+    padding: 0% 23%;
   }
 
 }
@@ -1304,6 +1336,10 @@ footer {
     row-gap: 20px;
     padding-top: 15px;
   }
+  .file-input, .file-image {
+    width: 130px;
+    height: 100px;
+  }
   .form-add-container form {
     display: grid;
     grid-template-columns: repeat(2, 50%);
@@ -1316,6 +1352,9 @@ footer {
   .btn-add-container {
     justify-content: first baseline;
     width: 50%;
+  }
+  .admin-nav {
+    padding: 0% 35%;
   }
 
 
@@ -1421,6 +1460,10 @@ footer {
 
   .venta-p {
     font-size: 22px;
+  }
+  .file-input, .file-image {
+    width: 200px;
+    height: 150px;
   }
 
 }
