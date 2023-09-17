@@ -1,4 +1,4 @@
-import { collection, getDocs, query, where} from "firebase/firestore/lite";
+import { collection, getDocs, query} from "firebase/firestore/lite";
 import { db } from "../firebase/config";
 import { useState } from "react";
 
@@ -15,7 +15,6 @@ const useFirebase = () => {
             const q = query(dataRef);
     
             const dataDB =  await getDocs(q)
-            // console.log(dataDB)
             setData(dataDB.docs.map((doc) => doc.data()))
         } catch (error) {
             console.log(error)

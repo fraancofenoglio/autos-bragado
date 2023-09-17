@@ -7,6 +7,7 @@ const IMGselector = ({num, setFiles, files}) => {
     const handleSubmit = (e) => {
         e.preventDefault()
     }
+    console.log(files)
 
   return (
     <form onSubmit={handleSubmit} className='add-image-container'>
@@ -17,6 +18,7 @@ const IMGselector = ({num, setFiles, files}) => {
                 if(file.id !== num){
                     return file
                 }
+                return files // esto va?
             })
   
             const srcI = URL.createObjectURL(e.target.files[0]);

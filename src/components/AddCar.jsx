@@ -4,12 +4,10 @@ import { doc, setDoc} from "firebase/firestore/lite";
 import { storage, db } from "../firebase/config";
 import IMGselector from "../components/IMGselector";
 import { v4 } from "uuid";
-import { useEffect } from "react";
 
 const AddCar = () => {
     
     const [num, setNum] = useState([0]);
-    const [imgs, setImgs] = useState([]);
     const [files, setFiles] = useState([]);
 
     const [marca, setMarca] = useState("");
@@ -22,8 +20,6 @@ const AddCar = () => {
     const [año, setAño] = useState(0);
     const [kilometros, setKilometros] = useState(0);
     const [descripcion, setDescripcion] = useState("");
-
-
 
     const pop = (array) => array.pop()
 
@@ -40,22 +36,12 @@ const AddCar = () => {
                 return await getDownloadURL(storageRef);
             });
             
-            // setImgs(await Promise.all(promises))
             const urls = await Promise.all(promises)
             return urls
-            // console.log(urls)
-            // const setearImgs = async () => {
-            //     const result = await Promise.all(promises)
-            //     return setImgs(result);
-            // } 
-
-            // setearImgs()
-            console.log(imgs)
 
         } catch (error) {
             console.log(error)
         }
-        
     }
 
     const handleSubmit = async (e) => {
@@ -63,7 +49,6 @@ const AddCar = () => {
         if (condition) {
             try {
                 const uploaded = await uploadFile();
-                console.log(imgs)
                 const newDoc = {
                     marca: marca,
                     modelo: modelo,
@@ -81,12 +66,9 @@ const AddCar = () => {
                 };
 
                 const docRef = doc(db, "vehicles", newDoc.id);
-                console.log(newDoc)
                 
                 await setDoc(docRef, newDoc);
 
-                
-                
             } catch (error) {
                 console.log(error)
             }
@@ -94,9 +76,6 @@ const AddCar = () => {
             console.log("condicion no ok")
         }
     }
-    useEffect(() => {
-        console.log(imgs); // Imprime el valor actualizado de imgs cada vez que cambie
-      }, [imgs]);
 
   return (
     <section className="admin-container">
@@ -113,9 +92,6 @@ const AddCar = () => {
 
         </div>
 
-
-        <button onClick={() => uploadFile()}>SUBIR</button>
-
         <div className="btn-add-container">
             {
                 num.length < 10 &&
@@ -126,10 +102,9 @@ const AddCar = () => {
             (num.length <= 10 && num.length >= 2) &&
             <button className="add-img-btn" onClick={() => {
                 if (num.length <= 10 && num.length >= 2) {
-                    pop(num)
-                    pop(imgs)
-                    setNum([...num])
-                    // setImgs([...imgs])
+                    pop(num);
+                    pop(files);
+                    setNum([...num]);
                 }
             }}>Eliminar última imagen</button>
             }
