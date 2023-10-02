@@ -1137,7 +1137,7 @@ footer {
 }
 
 .confirm-container {
-  width: 100%;
+  width: 110%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
