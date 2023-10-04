@@ -96,7 +96,7 @@ const EditCar = ({open, setOpen, edit}) => {
                 <input type="number" name="" id="" value={kilometrosEdit} onChange={(e) => setKilometrosEdit(e.target.value)}/>
 
                 <span className="edit-span">Descripción</span>
-                <textarea name="edit-descripcion" id="edit-descripcion" cols="40" rows="3"   value={descripcionEdit} onChange={(e) => setDescripcionEdit(e.target.value)} style={{resize: "none"}}></textarea>
+                <textarea name="edit-descripcion" id="edit-descripcion" cols="40" rows="3" value={descripcionEdit} onChange={(e) => setDescripcionEdit(e.target.value)} style={{resize: "none"}}></textarea>
 
                 <div className="confirm-container">
                     <button className="modal-buttons" type="submit" id="confirm">CONFIRMAR</button>
