@@ -1083,7 +1083,6 @@ footer {
   left: 0;
   pointer-events: auto;
   z-index: 99999;
-
 }
 
 .modal-open {
@@ -1093,15 +1092,16 @@ footer {
 .modal {
   background-color: #f8f9ff;
   width: 90vw;
-  height: 85vh;
+  height: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   align-items: center;
   font-family: 'Oswald', sans-serif;
   color: #3b3b3b;
   border-radius: 10px;
-
+  overflow-y: scroll;
+  margin-bottom:70px;
 }
 .modal h5 {
   font-size: 20px;
@@ -1111,16 +1111,15 @@ footer {
 .edit-form {
   display: flex;
   flex-direction: column;
-  height: 90%;
+  height: auto;
   justify-content: space-evenly;
   align-items: center;
   width: 80%;
-  
 }
 .edit-form input, .edit-form select {
   font-size: 18px;
   width: 100%;
-  height: 30px;
+  height: 30px !important;
   font-family: 'Oswald', sans-serif;
   color: #5d5d60;
   padding: 0% 5%;
