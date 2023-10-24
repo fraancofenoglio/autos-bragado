@@ -7,7 +7,7 @@ const IMGselector = ({num, setFiles, files}) => {
     const handleSubmit = (e) => {
         e.preventDefault()
     }
-    console.log(files)
+    // console.log(files)
 
   return (
     <form onSubmit={handleSubmit} className='add-image-container'>

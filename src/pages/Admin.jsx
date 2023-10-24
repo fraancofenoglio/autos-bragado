@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import AddCar from "../components/AddCar";
 import useFirebase from '../firebase/utils.js'
 import EditCar from "../components/EditCar";
 import DeleteCar from "../components/DeleteCar";
+import SearchContext from "../context/SearchContext";
 
 const Admin = () => {
 
     const [selected, setSelected] = useState(false);
+    const [submited, setSubmited] = useState(false);
 
     const [open, setOpen] = useState(false);
     const [openDelete, setOpenDelete] = useState(false);
@@ -14,9 +16,15 @@ const Admin = () => {
     const [vehicle, setVehicle] = useState({});
     const {getData, data} = useFirebase();
 
+    const { setResultados} = useContext(SearchContext);
+
     useEffect(() => {
+        console.log("useeffect")
         getData()
-    },[])
+        setResultados(data)
+    },[submited])
+
+// separar edicion de agregar para que busque en firebase cuando se entra a edit y agregar un modal que diga eliminado o modificado
     
   return (
     <>
@@ -72,11 +80,11 @@ const Admin = () => {
             </section>
 
             {
-                open ? <EditCar open={open} setOpen={setOpen} edit={vehicle}></EditCar> : <></>
+                open ? <EditCar open={open} setOpen={setOpen} edit={vehicle} setSubmited={setSubmited} submited={submited}></EditCar> : <></>
             }
 
             {
-                openDelete ? <DeleteCar openDelete={openDelete} setOpenDelete={setOpenDelete} toDelete={vehicle}></DeleteCar> : <></>
+                openDelete ? <DeleteCar openDelete={openDelete} setOpenDelete={setOpenDelete} toDelete={vehicle} setSubmited={setSubmited} submited={submited}></DeleteCar> : <></>
             }
             
             </>

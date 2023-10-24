@@ -7,7 +7,7 @@ const NavMobile = () => {
   const [open, setOpen] = useState(false);
   const [animation, setAnimation] = useState("");
   const [widthChange, setWidthChange] = useState(window.innerWidth);
-  const {setResultados, autos} = useContext(SearchContext);
+  const {setResultados, autosDB} = useContext(SearchContext);
   window.addEventListener("resize", ()=> {
     setWidthChange(window.innerWidth)
   })
@@ -20,7 +20,7 @@ const NavMobile = () => {
     } else {
       setAnimation("slide-out 0.1s cubic-bezier(0.755, 0.050, 0.855, 0.060) both")
     }
-    setResultados(autos)
+    setResultados(autosDB)
   }
 
   return (

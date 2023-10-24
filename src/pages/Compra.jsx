@@ -3,34 +3,72 @@ import SearchContext from '../context/SearchContext'
 import SimpleSearch from "../components/SimpleSearch";
 import Footer from "../components/Footer";
 import ResultadosBusqueda from "../components/ResultadosBusqueda";
+import { useEffect } from "react";
 
 const Compra = () => {
 
-  const { minPrice,setMinPrice,maxPrice,setMaxPrice,minYear,setMinYear,maxYear,setMaxYear,MARCA,setMARCA,MODELO,setMODELO,COMBUSTIBLE,setCOMBUSTIBLE,KILOMETROS,setKILOMETROS,setResultados,autos, marcasUnicas, modelosUnicos, user} = useContext(SearchContext);
+  const { minPrice,setMinPrice,maxPrice,setMaxPrice,minYear,setMinYear,maxYear,setMaxYear,MARCA,setMARCA,MODELO,setMODELO,COMBUSTIBLE,setCOMBUSTIBLE,KILOMETROS,setKILOMETROS,resultados,setResultados,autosDB, marcasUnicas, modelosUnicos, click} = useContext(SearchContext);
     
-  console.log("compra", user)
+  console.log("compra", resultados)
+
+  // falta agregar loaders a los botones de eliminar/editar/agregar vehiculo,
+  //centrar el loader de la home, eliminar los console.log
+
+    useEffect(()=>{
+      setResultados(autosDB)
+    },[autosDB])
+
+    useEffect(()=>{
+      if(click === true) {
+        setResultados(resultados)
+      } else {
+        setResultados(autosDB)
+      }
+    },[])
 
 
-    const marcaFilter = auto => MARCA ? auto.marca.toLowerCase() === MARCA : auto;
-
-    const modeloFilter = auto => MODELO ? auto.modelo.toLowerCase() === MODELO : auto;
+    const marcaFilter = (auto) => {
+      if (MARCA && auto.marca) {
+        return auto.marca.toLowerCase() === MARCA.toLowerCase();
+      }
+      return true;
+    };
+    
+    const modeloFilter = (auto) => {
+      if (MODELO && auto.modelo) {
+        return auto.modelo.toLowerCase() === MODELO.toLowerCase();
+      }
+      return true;
+    };
+    
+    const combustibleFilter = (auto) => {
+      if (COMBUSTIBLE && auto.combustible) {
+        return auto.combustible.toLowerCase() === COMBUSTIBLE.toLowerCase();
+      }
+      return true;
+    };
+    
+    const kmFilter = (auto) => {
+      if (KILOMETROS && auto.km) {
+        return auto.km <= parseInt(KILOMETROS, 10);
+      }
+      return true;
+    };
 
     const precioMinFilter = auto => minPrice ? auto.precio >= minPrice : auto;
 
     const precioMaxFilter = auto => maxPrice ? auto.precio <= maxPrice : auto;
 
-    const combustibleFilter = (auto) => COMBUSTIBLE ? auto.combustible.toLowerCase() === COMBUSTIBLE : auto;
+    const yearMinFilter = auto => minYear && auto.year ? auto.year >= minYear : auto;
 
-    const kmFilter = auto => KILOMETROS ? auto.km <= KILOMETROS : auto;
-
-    const yearMinFilter = auto => minYear ? auto.year >= minYear : auto;
-
-    const yearMaxFilter = (auto) => maxYear ? auto.year <= maxYear : auto;
+    const yearMaxFilter = (auto) => maxYear && auto.year && auto.year ? auto.year <= maxYear : auto;
 
     const handleSubmit = (e) => {
         e.preventDefault();
+      console.log(autosDB, MARCA, MODELO, COMBUSTIBLE, KILOMETROS)
 
-        setResultados(autos.filter(marcaFilter).filter(modeloFilter).filter(combustibleFilter).filter(kmFilter).filter(precioMinFilter).filter(precioMaxFilter).filter(yearMinFilter).filter(yearMaxFilter))
+
+        setResultados(autosDB.filter(marcaFilter).filter(modeloFilter).filter(combustibleFilter).filter(kmFilter).filter(precioMinFilter).filter(precioMaxFilter).filter(yearMinFilter).filter(yearMaxFilter))
     }
 
   return (

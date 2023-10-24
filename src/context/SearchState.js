@@ -1,26 +1,41 @@
 import React, { useState } from "react";
 import SearchContext from './SearchContext';
 import {autos} from '../autos.js';
+import { useEffect } from "react";
+import useFirebase from "../firebase/utils";
 
 
 const SearchState = ({children}) => {
 
-    const [minPrice, setMinPrice] = useState(200000);
-    const [maxPrice, setMaxPrice] = useState(10000000);
-    const [minYear, setMinYear] = useState(2000);
-    const [maxYear, setMaxYear] = useState(2023);
-    const [MARCA, setMARCA] = useState("");
-    const [MODELO, setMODELO] = useState("");
-    const [COMBUSTIBLE, setCOMBUSTIBLE] = useState("");
-    const [KILOMETROS, setKILOMETROS] = useState(100000);
-    const [autosInput, setAutosInput] = useState("");
+  const [minPrice, setMinPrice] = useState(200000);
+  const [maxPrice, setMaxPrice] = useState(10000000);
+  const [minYear, setMinYear] = useState(2000);
+  const [maxYear, setMaxYear] = useState(2023);
+  const [MARCA, setMARCA] = useState(false);
+  const [MODELO, setMODELO] = useState(false);
+  const [COMBUSTIBLE, setCOMBUSTIBLE] = useState(false);
+  const [KILOMETROS, setKILOMETROS] = useState(100000);
+  const [autosInput, setAutosInput] = useState("");
 
-    const [resultados, setResultados] = useState(autos);
+  const [autosDB, setAutos] = useState()
+  const [resultados, setResultados] = useState(autosDB? autosDB : autos);
 
-    const marcasUnicas = Array.from(new Set(autos.map((auto) => auto.marca)));
-    const modelosUnicos = Array.from(new Set(autos.filter(auto => auto.marca.toLowerCase() === MARCA).map(auto => auto.modelo)));
+  const marcasUnicas = Array.from(new Set(autosDB?.map((auto) => auto.marca.toLowerCase())));
+  const modelosUnicos = Array.from(new Set(autosDB?.filter(auto => auto.marca.toLowerCase() === MARCA).map(auto => auto.modelo.toLowerCase())));
 
-    const [user, setUser] = useState()
+  const [user, setUser] = useState()
+  const {getData, data} = useFirebase();
+
+  const [click, setClick] = useState(false)
+
+  useEffect( () => {
+    getData()
+  },[])
+
+  useEffect(() => {
+    setAutos(data)
+    console.log(data)
+  },[data, autosDB])
 
   return (
     <SearchContext.Provider
@@ -46,10 +61,13 @@ const SearchState = ({children}) => {
             resultados,
             setResultados,
             autos,
+            autosDB,
             marcasUnicas,
             modelosUnicos,
             user,
-            setUser
+            setUser,
+            click,
+            setClick
         }}
     >
         {children}

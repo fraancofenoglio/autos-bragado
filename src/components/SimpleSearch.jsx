@@ -3,14 +3,14 @@ import SearchContext from "../context/SearchContext";
 
 const SimpleSearch = () => {
 
-  const {setResultados, setAutosInput, autos, autosInput} = useContext(SearchContext);
+  const {setResultados, setAutosInput, autosDB, autosInput} = useContext(SearchContext);
   
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if(autosInput){
       setResultados(
-        autos.filter((auto) => {
+        autosDB.filter((auto) => {
           if(auto.marca.toLowerCase() === autosInput.toLowerCase()) {
             return auto.marca
           } else if ( auto.modelo.toLowerCase() === autosInput.toLowerCase()){

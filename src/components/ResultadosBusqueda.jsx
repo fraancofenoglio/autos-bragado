@@ -1,8 +1,9 @@
 import {useContext, useEffect} from 'react';
 import SearchContext from '../context/SearchContext';
+import Loader from './Loader';
 const ResultadosBusqueda = () => {
 
-    const {resultados, setResultados} = useContext(SearchContext);
+    const {resultados, setResultados, autosDB} = useContext(SearchContext);
 
     useEffect(() => {
         if (window.location.pathname === "/") {
@@ -11,11 +12,20 @@ const ResultadosBusqueda = () => {
         }
         
     }, [setResultados])
+
+    useEffect(() => {
+        if(window.location.pathname !== "/"){
+            setResultados(resultados)
+        }
+    })
+    console.log(resultados)
     
   return (
-    <section className="resultados-busqueda">
+    
+        autosDB ?
+            <section className="resultados-busqueda">
             {
-             resultados && resultados.length !== 0 ?
+             (resultados && autosDB) && resultados.length !== 0 ?
                 <>
                 {resultados.map((auto, i) => (
                     <div className="card" key={i}>
@@ -40,6 +50,11 @@ const ResultadosBusqueda = () => {
             }
 
         </section>
+        : 
+        <div style={{width: "100vw", display: "flex", flexDirection:"column", alignItems: "center"}}>
+            <Loader/>
+        </div>
+    
   )
 }
 

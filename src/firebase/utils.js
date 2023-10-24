@@ -9,7 +9,7 @@ const useFirebase = () => {
 
 
     const getData = async () => {
-
+        console.log("firebase buscando...")
         try {
             const dataRef = collection(db, "vehicles");
             const q = query(dataRef);

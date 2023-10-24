@@ -611,6 +611,7 @@ footer {
   margin-bottom: 15%;
 }
 .card-img {
+  max-height: 125px;
   width: 45vw;
   border-radius: 10px 10px 0px 0px;
 }
@@ -1276,6 +1277,13 @@ footer {
     padding: 0% 23%;
   }
 
+  .modal {
+    height: 75%;
+  }
+  .confirm-container {
+    margin-top: 5%;
+  }
+
 }
 
 @media only screen and (min-width: 800px){
@@ -1427,7 +1435,7 @@ footer {
   }
   .card {
     width: 90%;
-    max-height: 400px;
+    max-height: 420px;
   }
   .card-img {
     width: 100%;
@@ -1440,7 +1448,6 @@ footer {
   }
   .card-button {
     margin-top: 5px;
-    height: 35px;
     font-size: 18px;
   }
 
@@ -1553,16 +1560,21 @@ footer {
 
   .modal {
     width: 45vw;
-    /* overflow-y: scroll; */
-    height: auto;
+    height: 80%;
     min-height: 200px;
     max-height: 95vh;
+    overflow: hidden;
+    margin-bottom:0px;
+
   }
 
   .modal textarea {
     height: 60px;
+    margin-bottom: 20px;
   }
-
+  .card-img {
+    max-height: 166px;
+  }
 
 }
 
@@ -1607,7 +1619,15 @@ footer {
   }
 
   .card { 
-    max-height: 450px;
+    max-height: 480px;
+  }
+
+  .card-button {
+    height: 45px !important;
+
+  }
+  .card-img {
+    max-height: 258px;
   }
 
   .sucursales h2 {

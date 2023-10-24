@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { doc, updateDoc } from "firebase/firestore/lite";
 import { db } from "../firebase/config";
+import Loader from "./Loader";
 
 
 
-const EditCar = ({open, setOpen, edit}) => {
+const EditCar = ({open, setOpen, edit, setSubmited, submited}) => {
 
     const {marca, modelo, year, combustible, km, transmision, motor, color, precio, descripcion, id} = edit;
 
@@ -19,8 +20,12 @@ const EditCar = ({open, setOpen, edit}) => {
     const [kilometrosEdit, setKilometrosEdit] = useState(km);
     const [descripcionEdit, setDescripcionEdit] = useState(descripcion);
 
+    const [loading, setLoading] = useState(false)
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
 
         const docEditRef = doc(db, "vehicles", id);
 
@@ -42,9 +47,11 @@ const EditCar = ({open, setOpen, edit}) => {
         } catch (error) {
             console.log(error)
         } finally {
-            setOpen(false)
-        }
+            setOpen(false);
+            setLoading(false);
+            setSubmited(!submited);
 
+        }
 
     }
 
@@ -99,7 +106,7 @@ const EditCar = ({open, setOpen, edit}) => {
                 <textarea name="edit-descripcion" id="edit-descripcion" cols="40" rows="3" value={descripcionEdit} onChange={(e) => setDescripcionEdit(e.target.value)} style={{resize: "none"}}></textarea>
 
                 <div className="confirm-container">
-                    <button className="modal-buttons" type="submit" id="confirm">CONFIRMAR</button>
+                    <button className="modal-buttons" type="submit" id="confirm">{loading ? <Loader/> : "CONFIRMAR"}</button>
 
                     <button className="modal-buttons" id="cancel" onClick={ () => {
                         setOpen(false)
