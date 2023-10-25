@@ -76,7 +76,7 @@ const AddCar = () => {
             console.log("condicion no ok")
         }
     }
-
+// agregar Loader al boton agregar y borrar los datos del form + cartel de agregado
   return (
     <section className="admin-container">
 
