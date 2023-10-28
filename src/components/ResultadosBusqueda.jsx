@@ -44,8 +44,6 @@ const ResultadosBusqueda = () => {
 
                 {resultados === null ? <></> : <span className="no-results">No hay resultados que coincidan con su búsqueda.</span>}
                 
-                
-                
                 </>
             }
 
@@ -54,7 +52,6 @@ const ResultadosBusqueda = () => {
         <div style={{width: "100vw", display: "flex", flexDirection:"column", alignItems: "center"}}>
             <Loader/>
         </div>
-    
   )
 }
 

@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import SearchContext from "../context/SearchContext";
 import { useNavigate } from "react-router-dom";
-import Loader from "./Loader";
 
 
 const FullSearch = () => {

@@ -1,5 +1,6 @@
 import EditCar from "../components/EditCar";
 import DeleteCar from "../components/DeleteCar";
+import Loader from "./Loader";
 
 const Edit = ({setSubmited, submited, open, setOpen, openDelete, setOpenDelete, vehicle, setVehicle, data}) => {
   return (
@@ -11,6 +12,7 @@ const Edit = ({setSubmited, submited, open, setOpen, openDelete, setOpenDelete, 
             
             <section className="list-item-container">
             {
+                data ? 
                 data && data.map((d, i) => (
                     <div className="list-item" key={i}>
                         <img src={d.imagenes[0]} alt=""  style={{width: "60px", height: "40px"}}/>
@@ -41,6 +43,9 @@ const Edit = ({setSubmited, submited, open, setOpen, openDelete, setOpenDelete, 
                         </div>
                     </div>
                 ))
+                : <div style={{width: "100vw", display: "flex", flexDirection:"column", alignItems: "center"}}>
+                    <Loader/>
+                </div>
             }
             </section>
 
@@ -52,7 +57,7 @@ const Edit = ({setSubmited, submited, open, setOpen, openDelete, setOpenDelete, 
                 openDelete ? <DeleteCar openDelete={openDelete} setOpenDelete={setOpenDelete} toDelete={vehicle} setSubmited={setSubmited} submited={submited}></DeleteCar> : <></>
             }
             
-            </>
+    </>
   )
 }
 

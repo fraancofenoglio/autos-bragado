@@ -1,13 +1,9 @@
-import {useState} from 'react'
 
-const IMGselector = ({num, setFiles, files}) => {
-
-    const [src, setSrc] = useState("/assets/ADD.svg");
+const IMGselector = ({num, setFiles, files, src, setSrc}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
     }
-    // console.log(files)
 
   return (
     <form onSubmit={handleSubmit} className='add-image-container'>

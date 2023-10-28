@@ -4,11 +4,15 @@ import { doc, setDoc} from "firebase/firestore/lite";
 import { storage, db } from "../firebase/config";
 import IMGselector from "../components/IMGselector";
 import { v4 } from "uuid";
+import Loader from "./Loader";
 
 const AddCar = () => {
     
     const [num, setNum] = useState([0]);
     const [files, setFiles] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [src, setSrc] = useState("/assets/ADD.svg");
+
 
     const [marca, setMarca] = useState("");
     const [modelo, setModelo] = useState("");
@@ -22,6 +26,22 @@ const AddCar = () => {
     const [descripcion, setDescripcion] = useState("");
 
     const pop = (array) => array.pop()
+
+    const resetForm = () => {
+        setMarca("");
+        setModelo("");
+        setCombustible("");
+        setTransmision("");
+        setMotor("");
+        setColor("");
+        setPrecio(0);
+        setAño(0);
+        setKilometros(0);
+        setDescripcion("");
+        setNum([0]);
+        setFiles([]);
+        setSrc("/assets/ADD.svg");
+    }
 
     const condition = files && marca && modelo && combustible && transmision && motor && color && precio > 0 && año > 0 && kilometros && descripcion;
     
@@ -48,6 +68,7 @@ const AddCar = () => {
         e.preventDefault();
         if (condition) {
             try {
+                setLoading(true)
                 const uploaded = await uploadFile();
                 const newDoc = {
                     marca: marca,
@@ -71,12 +92,16 @@ const AddCar = () => {
 
             } catch (error) {
                 console.log(error)
+            } finally {
+                resetForm()
+                setLoading(false);
+                
             }
         } else {
             console.log("condicion no ok")
         }
     }
-// agregar Loader al boton agregar y borrar los datos del form + cartel de agregado
+// agregar cartel de agregado
   return (
     <section className="admin-container">
 
@@ -86,7 +111,7 @@ const AddCar = () => {
         <div className="add-img">
             {
                 num.map((n) => (
-                    <IMGselector num={n} uploadFile={uploadFile} key={n+1} setFiles={setFiles} files={files}></IMGselector>
+                    <IMGselector num={n} uploadFile={uploadFile} key={n+1} setFiles={setFiles} files={files} src={src} setSrc={setSrc}></IMGselector>
                 ))
             }
 
@@ -174,7 +199,7 @@ const AddCar = () => {
                     <textarea name="add-descripcion" id="add-descripcion" cols="30" rows="10" placeholder="ej: MUY BUEN ESTADO DE USO Y MANTENIMIENTO, ÚNICO TITULAR, LISTO PARA TRANSFERIR RADICADO EN CIUDAD DE BUENOS AIRES, TODOS LOS SERVICIOS RECIEN REALIZADOS." required value={descripcion} onChange={(e) => setDescripcion(e.target.value)}></textarea>
                 </div>
                 <div className="submit-add-btn">
-                    <button type="submit">AGREGAR VEHÍCULO</button>
+                    <button type="submit"> { loading ? <Loader/> : "AGREGAR VEHÍCULO"}</button>
                 </div>
 
             </form>

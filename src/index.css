@@ -869,7 +869,7 @@ footer {
   height: 20px;
   border-radius: 50%;
   border: 6px solid #fff;
-  border-color: #EB5E28 transparent #EB5E28 transparent;
+  border-color: #EB5E28 #f8f9ff #EB5E28 #f8f9ff;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 
@@ -1560,12 +1560,23 @@ footer {
 
   .modal {
     width: 45vw;
-    height: 80%;
+    height: 100%;
     min-height: 200px;
     max-height: 95vh;
     overflow: hidden;
     margin-bottom:0px;
+  }
 
+  .modal h5 {
+    margin-top: 0px;
+  }
+
+  .edit-form {
+    height: 100%;
+  }
+
+  .confirm-container {
+    margin-top: 0px;
   }
 
   .modal textarea {
@@ -1627,7 +1638,7 @@ footer {
 
   }
   .card-img {
-    max-height: 258px;
+    max-height: 193px;
   }
 
   .sucursales h2 {
