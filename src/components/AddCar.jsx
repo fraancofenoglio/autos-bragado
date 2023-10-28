@@ -5,6 +5,8 @@ import { storage, db } from "../firebase/config";
 import IMGselector from "../components/IMGselector";
 import { v4 } from "uuid";
 import Loader from "./Loader";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddCar = () => {
     
@@ -13,6 +15,16 @@ const AddCar = () => {
     const [loading, setLoading] = useState(false);
     const [src, setSrc] = useState("/assets/ADD.svg");
 
+    const signal = () => toast.success("¡Vehículo agregado!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+    });
 
     const [marca, setMarca] = useState("");
     const [modelo, setModelo] = useState("");
@@ -57,6 +69,7 @@ const AddCar = () => {
             });
             
             const urls = await Promise.all(promises)
+            signal()
             return urls
 
         } catch (error) {
@@ -106,6 +119,8 @@ const AddCar = () => {
     <section className="admin-container">
 
         <h4>Agregar un nuevo vehículo</h4>
+
+        <button onClick={signal}>notificar</button>
 
         <h5>Agrega hasta 10 fotos del vehículo.</h5>
         <div className="add-img">
@@ -204,6 +219,18 @@ const AddCar = () => {
 
             </form>
         </div>
+        <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+        />
 
     </section>
   )

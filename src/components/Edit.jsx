@@ -1,8 +1,21 @@
 import EditCar from "../components/EditCar";
 import DeleteCar from "../components/DeleteCar";
 import Loader from "./Loader";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Edit = ({setSubmited, submited, open, setOpen, openDelete, setOpenDelete, vehicle, setVehicle, data}) => {
+
+    const signal = (message) => toast.success(message, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+    });
   return (
     <>
             <section className="edit-container">
@@ -50,13 +63,25 @@ const Edit = ({setSubmited, submited, open, setOpen, openDelete, setOpenDelete, 
             </section>
 
             {
-                open ? <EditCar open={open} setOpen={setOpen} edit={vehicle} setSubmited={setSubmited} submited={submited}></EditCar> : <></>
+                open ? <EditCar open={open} setOpen={setOpen} edit={vehicle} setSubmited={setSubmited} submited={submited} signal={signal}></EditCar> : <></>
             }
 
             {
-                openDelete ? <DeleteCar openDelete={openDelete} setOpenDelete={setOpenDelete} toDelete={vehicle} setSubmited={setSubmited} submited={submited}></DeleteCar> : <></>
+                openDelete ? <DeleteCar openDelete={openDelete} setOpenDelete={setOpenDelete} toDelete={vehicle} setSubmited={setSubmited} submited={submited} signal={signal}></DeleteCar> : <></>
             }
             
+            <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+        />
     </>
   )
 }

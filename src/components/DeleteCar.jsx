@@ -5,7 +5,7 @@ import Loader from "./Loader";
 
 
 
-const DeleteCar = ({openDelete, setOpenDelete, toDelete, setSubmited, submited}) => {
+const DeleteCar = ({openDelete, setOpenDelete, toDelete, setSubmited, submited, signal}) => {
 
     const {id} = toDelete;
     const [loading, setLoading] = useState(false)
@@ -23,6 +23,7 @@ const DeleteCar = ({openDelete, setOpenDelete, toDelete, setSubmited, submited})
             setLoading(false);
             setOpenDelete(false);
             setSubmited(!submited);
+            signal("Vehículo eliminado.")
         }
     }
 

@@ -5,7 +5,7 @@ import Loader from "./Loader";
 
 
 
-const EditCar = ({open, setOpen, edit, setSubmited, submited}) => {
+const EditCar = ({open, setOpen, edit, setSubmited, submited, signal}) => {
 
     const {marca, modelo, year, combustible, km, transmision, motor, color, precio, descripcion, id} = edit;
 
@@ -50,7 +50,7 @@ const EditCar = ({open, setOpen, edit, setSubmited, submited}) => {
             setOpen(false);
             setLoading(false);
             setSubmited(!submited);
-
+            signal("Vehículo modificado.")
         }
 
     }
