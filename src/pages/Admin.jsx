@@ -24,7 +24,7 @@ const Admin = () => {
         setResultados(data)
     },[submited])
 
-// agregar un modal que diga eliminado o modificado y un boton para actualizar los autos
+// agregar un boton para actualizar los autos
     
   return (
     <>

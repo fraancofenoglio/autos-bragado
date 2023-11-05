@@ -114,13 +114,10 @@ const AddCar = () => {
             console.log("condicion no ok")
         }
     }
-// agregar cartel de agregado
   return (
     <section className="admin-container">
 
         <h4>Agregar un nuevo vehículo</h4>
-
-        <button onClick={signal}>notificar</button>
 
         <h5>Agrega hasta 10 fotos del vehículo.</h5>
         <div className="add-img">

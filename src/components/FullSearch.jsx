@@ -7,7 +7,7 @@ const FullSearch = () => {
 
   const navigate = useNavigate()
   
-  const {minPrice,setMinPrice,maxPrice,setMaxPrice,MARCA,setMARCA,MODELO,setMODELO, KILOMETROS, setKILOMETROS, autos, autosDB, setResultados, modelosUnicos, marcasUnicas, setClick} = useContext(SearchContext);
+  const {minPrice,setMinPrice,maxPrice,setMaxPrice,MARCA,setMARCA,MODELO,setMODELO, KILOMETROS, setKILOMETROS, autosDB, setResultados, modelosUnicos, marcasUnicas, setClick} = useContext(SearchContext);
 
   const handleSubmit = (e) => {
     e.preventDefault()

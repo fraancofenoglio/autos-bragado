@@ -20,6 +20,8 @@ const SearchState = ({children}) => {
   const [autosDB, setAutos] = useState()
   const [resultados, setResultados] = useState(autosDB? autosDB : autos);
 
+  const [autosLS, setAutosLS] = useState()
+
   const marcasUnicas = Array.from(new Set(autosDB?.map((auto) => auto.marca.toLowerCase())));
   const modelosUnicos = Array.from(new Set(autosDB?.filter(auto => auto.marca.toLowerCase() === MARCA).map(auto => auto.modelo.toLowerCase())));
 
@@ -28,6 +30,8 @@ const SearchState = ({children}) => {
 
   const [click, setClick] = useState(false)
 
+
+
   useEffect( () => {
     getData()
   },[])
@@ -35,6 +39,13 @@ const SearchState = ({children}) => {
   useEffect(() => {
     setAutos(data)
     console.log(data)
+    window.localStorage.setItem("data",JSON.stringify(data));
+
+    setTimeout(() => {
+      const ls = window.localStorage.getItem("data")  
+      setAutosLS(JSON.parse(ls))
+    }, 2000);
+
   },[data, autosDB])
 
   return (
@@ -62,6 +73,7 @@ const SearchState = ({children}) => {
             setResultados,
             autos,
             autosDB,
+            autosLS,
             marcasUnicas,
             modelosUnicos,
             user,

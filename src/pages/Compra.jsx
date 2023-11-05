@@ -7,12 +7,12 @@ import { useEffect } from "react";
 
 const Compra = () => {
 
-  const { minPrice,setMinPrice,maxPrice,setMaxPrice,minYear,setMinYear,maxYear,setMaxYear,MARCA,setMARCA,MODELO,setMODELO,COMBUSTIBLE,setCOMBUSTIBLE,KILOMETROS,setKILOMETROS,resultados,setResultados,autosDB, marcasUnicas, modelosUnicos, click} = useContext(SearchContext);
+  const { minPrice,setMinPrice,maxPrice,setMaxPrice,minYear,setMinYear,maxYear,setMaxYear,MARCA,setMARCA,MODELO,setMODELO,COMBUSTIBLE,setCOMBUSTIBLE,KILOMETROS,setKILOMETROS,resultados,setResultados,autosDB, marcasUnicas, modelosUnicos, click, setClick} = useContext(SearchContext);
     
-  console.log("compra", resultados)
+  // console.log("compra", resultados)
+  // console.log(click)
 
-  // falta agregar loaders a los botones de eliminar/editar/agregar vehiculo,
-  //centrar el loader de la home, eliminar los console.log
+  // eliminar los console.log
 
     useEffect(()=>{
       setResultados(autosDB)
@@ -25,6 +25,14 @@ const Compra = () => {
         setResultados(autosDB)
       }
     },[])
+
+    // useEffect(() => {
+    //   window.addEventListener('popstate', ()=> {
+    //       console.log("ejecutado")
+    //       setClick(true)
+    //   });
+   
+    // }, []);
 
 
     const marcaFilter = (auto) => {

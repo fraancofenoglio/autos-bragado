@@ -1,6 +1,7 @@
 import {useContext, useEffect} from 'react';
 import SearchContext from '../context/SearchContext';
 import Loader from './Loader';
+import { useNavigate } from 'react-router-dom';
 const ResultadosBusqueda = () => {
 
     const {resultados, setResultados, autosDB} = useContext(SearchContext);
@@ -18,7 +19,9 @@ const ResultadosBusqueda = () => {
             setResultados(resultados)
         }
     })
-    console.log(resultados)
+    // console.log(resultados)
+
+    const navigate = useNavigate()
     
   return (
     
@@ -35,7 +38,7 @@ const ResultadosBusqueda = () => {
                         <p className="card-info">{`${auto.year} / ${auto.combustible} / ${auto.transmision}`}</p>
                         <p className="card-km">{` ${auto.km} km`}</p>
                         <h4 className="card-precio">${auto.precio}</h4>
-                        <button className="card-button">VER</button>
+                        <button onClick={() => navigate(`/compra/${auto.id}`)} className="card-button">VER</button>
                     </div>
                     ))
                 }
