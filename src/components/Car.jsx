@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { doc, getDoc } from "firebase/firestore/lite";
 import { db } from "../firebase/config";
 import Footer from './Footer';
+import Loader from './Loader';
 
 const Car = () => {
     const { id } = useParams();
@@ -146,7 +147,9 @@ const Car = () => {
 
     <Footer></Footer>
     </>
-    : <>cargando</>
+    : <div style={{width:"100vw", height: "70vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+        <Loader></Loader>
+    </div>
   )
 }
 
