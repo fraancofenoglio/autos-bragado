@@ -44,7 +44,7 @@ const SearchState = ({children}) => {
     setTimeout(() => {
       const ls = window.localStorage.getItem("data")  
       setAutosLS(JSON.parse(ls))
-    }, 2000);
+    }, 3000);
 
   },[data, autosDB])
 

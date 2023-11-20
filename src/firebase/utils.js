@@ -19,7 +19,6 @@ const useFirebase = () => {
         } catch (error) {
             console.log(error)
         }
-
     }
   return {
     getData, data, setData
