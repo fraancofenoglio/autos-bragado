@@ -14,13 +14,11 @@ const Car = () => {
     const [showDetails, setShowDetails] = useState(false)
 
     useEffect(() => {
-        console.log("entro")
         const queryDoc = doc(db, "vehicles", id);
 
         const autoID = getDoc(queryDoc)
         .then(res => {
             setAuto(res.data())
-            console.log(res.data())
         })
     }, [])
     

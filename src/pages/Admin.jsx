@@ -19,12 +19,9 @@ const Admin = () => {
     const { setResultados} = useContext(SearchContext);
 
     useEffect(() => {
-        console.log("useeffect")
         getData()
         setResultados(data)
     },[submited])
-
-// agregar un boton para actualizar los autos
     
   return (
     <>

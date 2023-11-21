@@ -14,7 +14,7 @@ const IMGselector = ({num, setFiles, files, src, setSrc}) => {
                 if(file.id !== num){
                     return file
                 }
-                return files // esto va?
+                return files
             })
   
             const srcI = URL.createObjectURL(e.target.files[0]);

@@ -43,7 +43,6 @@ const EditCar = ({open, setOpen, edit, setSubmited, submited, signal}) => {
                 precio: precioEdit,
                 descripcion: descripcionEdit
             })
-            console.log(edicion)
         } catch (error) {
             console.log(error)
         } finally {

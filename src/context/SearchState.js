@@ -38,7 +38,6 @@ const SearchState = ({children}) => {
 
   useEffect(() => {
     setAutos(data)
-    console.log(data)
     window.localStorage.setItem("data",JSON.stringify(data));
 
     setTimeout(() => {

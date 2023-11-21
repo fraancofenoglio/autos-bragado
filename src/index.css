@@ -20,6 +20,18 @@ body {
   overflow-x: hidden;
 }
 
+body::-webkit-scrollbar{
+  width: 13px;
+}
+body::-webkit-scrollbar-track {
+  background: #3b3b3b;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #EB5E28;  
+  border-radius: 20px;
+  border: 1px solid #3b3b3b;    
+}
+
 nav {
   padding: 0px 15px;
   min-height: 80px;
@@ -513,7 +525,6 @@ footer {
   font-family: 'Oswald', sans-serif;
   color: #5d5d60;
   font-size: 16px;
-  cursor: pointer;
   transition: 0.3s;
 }
 
@@ -536,6 +547,7 @@ footer {
   transition: 0.3s;
   text-shadow: 1px 1px 1px #3b3b3b;
   margin-bottom: 10% !important;
+  cursor: pointer;
 }
 
 .form-footer-button:hover {
@@ -755,6 +767,7 @@ footer {
   box-shadow: 2px 2px 5px #EB5E28;
   transition: 0.3s;
   text-shadow: 1px 1px 1px #3b3b3b;
+  cursor: pointer;
 }
 
 .venta-p {

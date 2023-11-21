@@ -110,8 +110,6 @@ const AddCar = () => {
                 setLoading(false);
                 
             }
-        } else {
-            console.log("condicion no ok")
         }
     }
   return (

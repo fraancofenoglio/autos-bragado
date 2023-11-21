@@ -13,7 +13,7 @@ const Sucursales = () => {
 
       <p>Rivadavia 1801, Bragado</p>
 
-      <button type="button">Contactanos</button>
+      <button onClick={() => window.location.href = "https://api.whatsapp.com/send/?phone=5492342465676&text=Hola%2C+me+gustar%C3%ADa+que+me+pases+info+de"} type="button">Contactanos</button>
     </div>
 
   </div>

@@ -22,13 +22,10 @@ const SimpleSearch = () => {
       if (window.location.pathname === "/" && window.innerWidth > 800) {
         
         window.scroll({top: 1500, left: 0, behavior: "smooth"})
-        console.log("se activa el 1")
       } else if (window.location.pathname === "/" && window.innerWidth < 800){
         window.scroll({top: 1400, left: 0, behavior: "smooth"})
-        console.log("se activa el 2")
       } else if (window.innerWidth < 800) {
         window.scroll({top: 800, left: 0, behavior: "smooth"})
-        console.log("se activa el 3")
       }
     }
 

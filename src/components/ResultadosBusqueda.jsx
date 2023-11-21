@@ -19,7 +19,6 @@ const ResultadosBusqueda = () => {
             setResultados(resultados)
         }
     })
-    // console.log(resultados)
 
     const navigate = useNavigate()
     

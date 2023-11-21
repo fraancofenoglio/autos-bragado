@@ -7,12 +7,7 @@ import { useEffect } from "react";
 
 const Compra = () => {
 
-  const { minPrice,setMinPrice,maxPrice,setMaxPrice,minYear,setMinYear,maxYear,setMaxYear,MARCA,setMARCA,MODELO,setMODELO,COMBUSTIBLE,setCOMBUSTIBLE,KILOMETROS,setKILOMETROS,resultados,setResultados,autosDB, marcasUnicas, modelosUnicos, click, setClick} = useContext(SearchContext);
-    
-  // console.log("compra", resultados)
-  // console.log(click)
-
-  // eliminar los console.log
+  const { minPrice,setMinPrice,maxPrice,setMaxPrice,minYear,setMinYear,maxYear,setMaxYear,MARCA,setMARCA,MODELO,setMODELO,COMBUSTIBLE,setCOMBUSTIBLE,KILOMETROS,setKILOMETROS,resultados,setResultados,autosDB, marcasUnicas, modelosUnicos, click} = useContext(SearchContext);
 
     useEffect(()=>{
       setResultados(autosDB)
@@ -25,15 +20,6 @@ const Compra = () => {
         setResultados(autosDB)
       }
     },[])
-
-    // useEffect(() => {
-    //   window.addEventListener('popstate', ()=> {
-    //       console.log("ejecutado")
-    //       setClick(true)
-    //   });
-   
-    // }, []);
-
 
     const marcaFilter = (auto) => {
       if (MARCA && auto.marca) {
@@ -72,11 +58,9 @@ const Compra = () => {
     const yearMaxFilter = (auto) => maxYear && auto.year && auto.year ? auto.year <= maxYear : auto;
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-      console.log(autosDB, MARCA, MODELO, COMBUSTIBLE, KILOMETROS)
+      e.preventDefault();
 
-
-        setResultados(autosDB.filter(marcaFilter).filter(modeloFilter).filter(combustibleFilter).filter(kmFilter).filter(precioMinFilter).filter(precioMaxFilter).filter(yearMinFilter).filter(yearMaxFilter))
+      setResultados(autosDB.filter(marcaFilter).filter(modeloFilter).filter(combustibleFilter).filter(kmFilter).filter(precioMinFilter).filter(precioMaxFilter).filter(yearMinFilter).filter(yearMaxFilter))
     }
 
   return (
@@ -131,7 +115,6 @@ const Compra = () => {
             <input className="rangos" value={maxYear} type="range" min={2000} max={2023} step={1} onChange={(e)=> setMaxYear(e.target.value)}></input>
 
             <input className="form-search-btn" type="submit" value="BUSCAR"></input>
-
 
         </form>
 

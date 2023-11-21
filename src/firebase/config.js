@@ -10,7 +10,6 @@ const firebaseConfig = {
   storageBucket: "agencia-autos-344ac.appspot.com",
   messagingSenderId: "19450621701",
   appId: "1:19450621701:web:74d9a64e8ff6ac76bcd16c",
-//   storageBucket: "gs://agencia-autos-344ac.appspot.com/"
 };
 
 const app = initializeApp(firebaseConfig);

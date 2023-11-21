@@ -41,7 +41,6 @@ const FullSearch = () => {
 
   const kmFilter = (auto) => {
     if (KILOMETROS && auto.km) {
-      console.log(KILOMETROS, auto.km)
       return parseInt(auto.km, 10) <= parseInt(KILOMETROS, 10);
     }
     return true;
@@ -83,7 +82,6 @@ const FullSearch = () => {
 
             <select value={KILOMETROS} onChange={ e => {
               setKILOMETROS(e.target.value.toLowerCase())
-              console.log(KILOMETROS)
             }}>
             <option value={""} >Kilometraje</option>
               <option value={20000}>Menor a 20000km</option>
