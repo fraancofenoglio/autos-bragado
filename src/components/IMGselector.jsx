@@ -1,9 +1,17 @@
+import { useEffect } from "react";
+import { useState } from "react";
 
-const IMGselector = ({num, setFiles, files, src, setSrc}) => {
+const IMGselector = ({num, setFiles, files, executed}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
     }
+    const [src, setSrc] = useState("/assets/ADD.svg"); 
+
+    useEffect(() => {
+        setSrc("/assets/ADD.svg");
+    }, [executed])
+    
 
   return (
     <form onSubmit={handleSubmit} className='add-image-container'>
@@ -23,7 +31,6 @@ const IMGselector = ({num, setFiles, files, src, setSrc}) => {
             handleSubmit(e)
  
         }
-        
 
         }}/>
 

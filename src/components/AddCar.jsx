@@ -13,8 +13,7 @@ const AddCar = () => {
     const [num, setNum] = useState([0]);
     const [files, setFiles] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [src, setSrc] = useState("/assets/ADD.svg");
-
+    const [executed, setExecuted] = useState(false)
     const signal = () => toast.success("¡Vehículo agregado!", {
         position: "top-center",
         autoClose: 5000,
@@ -32,9 +31,9 @@ const AddCar = () => {
     const [transmision, setTransmision] = useState("");
     const [motor, setMotor] = useState("");
     const [color, setColor] = useState("");
-    const [precio, setPrecio] = useState(0);
-    const [año, setAño] = useState(0);
-    const [kilometros, setKilometros] = useState(0);
+    const [precio, setPrecio] = useState("");
+    const [año, setAño] = useState("");
+    const [kilometros, setKilometros] = useState("");
     const [descripcion, setDescripcion] = useState("");
 
     const pop = (array) => array.pop()
@@ -52,7 +51,7 @@ const AddCar = () => {
         setDescripcion("");
         setNum([0]);
         setFiles([]);
-        setSrc("/assets/ADD.svg");
+        setExecuted(!executed)
     }
 
     const condition = files && marca && modelo && combustible && transmision && motor && color && precio > 0 && año > 0 && kilometros && descripcion;
@@ -121,7 +120,7 @@ const AddCar = () => {
         <div className="add-img">
             {
                 num.map((n) => (
-                    <IMGselector num={n} uploadFile={uploadFile} key={n+1} setFiles={setFiles} files={files} src={src} setSrc={setSrc}></IMGselector>
+                    <IMGselector num={n} uploadFile={uploadFile} key={n+1} setFiles={setFiles} files={files} executed={executed} ></IMGselector>
                 ))
             }
 
@@ -191,17 +190,17 @@ const AddCar = () => {
 
                 <div>
                     <span className="span-add">Precio</span>
-                    <input type="number" name="add-precio" id="add-precio" placeholder="ej: 3500000" required value={precio} onChange={(e) => setPrecio(e.target.value)}/>
+                    <input type="number" name="add-precio" id="add-precio" placeholder="ej: 3500000" required value={precio} onChange={(e) => setPrecio(parseInt(e.target.value))}/>
                 </div>
 
                 <div>
                     <span className="span-add">Año</span>
-                    <input type="number" name="add-año" id="add-año" placeholder="ej: 2010" required value={año} onChange={(e) => setAño(e.target.value)}/>
+                    <input type="number" name="add-año" id="add-año" placeholder="ej: 2010" required value={año} onChange={(e) => setAño(parseInt(e.target.value))}/>
                 </div>
 
                 <div style={{height: "100%"}}>
                     <span className="span-add">Kilómetros</span>
-                    <input type="number" name="add-km" id="add-km" placeholder="ej: 20000" required value={kilometros} onChange={(e) => setKilometros(e.target.value)}/>
+                    <input type="number" name="add-km" id="add-km" placeholder="ej: 20000" required value={kilometros} onChange={(e) => setKilometros(parseInt(e.target.value))}/>
                 </div>
 
                 <div>
