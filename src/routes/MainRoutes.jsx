@@ -7,6 +7,7 @@ import Admin from '../pages/Admin';
 import ProtectedRoute from '../components/ProtectedRoute';
 import Login from '../pages/Login';
 import Car from '../components/Car';
+import NotFound from '../pages/NotFound';
 
 const MainRoutes = () => {
   return (
@@ -26,7 +27,9 @@ const MainRoutes = () => {
           }>
         </Route> 
 
-        <Route path='*' element={<h1>Not Found</h1>}/>
+        <Route path='*' element={<NotFound></NotFound>}/>
+        <Route path='/not-found' element={<NotFound></NotFound>}/>
+
     </Routes>
   )
 }

@@ -360,7 +360,7 @@ nav svg {
   text-shadow: 1px 1px 1px #3b3b3b;
 
 }
-.form-search-btn:hover, .login-btn:hover, .form-add-container button:hover , #confirm:hover, .consultar-button:hover {
+.form-search-btn:hover, .login-btn:hover, .form-add-container button:hover , #confirm:hover, .consultar-button:hover, .go-back:hover {
   background-color: #EB5E28;
   color: #f8f9ff;
   border: 2px solid #f8f9ff;
@@ -1389,7 +1389,7 @@ footer {
   min-height: 78.4vh;
 }
 
-.consultar-button {
+.consultar-button, .go-back {
   width: 175px;
   height: 40px;
   display: flex;
@@ -1413,6 +1413,29 @@ footer {
   fill: #EB5E28;
 }
 
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95vw;
+  height: 90vh;
+  margin: 0 auto;
+}
+
+.not-found-container h6 {
+  font-size: 33px;
+  font-family: 'Oswald', sans-serif;
+  color: #3b3b3b;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.not-found {
+  background-color: #94949773;
+  padding: 5%;
+  border-radius: 10px;
+}
 
 @keyframes lds-dual-ring {
   0% {

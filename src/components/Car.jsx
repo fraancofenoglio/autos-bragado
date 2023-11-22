@@ -19,7 +19,7 @@ const Car = () => {
         const autoID = getDoc(queryDoc)
         .then(res => {
             setAuto(res.data())
-        })
+        }).catch(window.location.href = "/not-found")
     }, [])
     
 
