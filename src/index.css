@@ -1316,7 +1316,6 @@ footer {
   font-weight: 700;
   font-family: 'Oswald', sans-serif;
   cursor: pointer;
-
 }
 
 .accordion-button svg {
@@ -1334,6 +1333,9 @@ footer {
   width: 100%;
   border-bottom: 1px solid #626161;
   padding-bottom: 10px;
+	animation: swing-in 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+  background-color: #f8f9ff;
+
 }
 
 .technical-info span{
@@ -1349,6 +1351,19 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@keyframes swing-in {
+  0% {
+    transform: rotateX(-100deg);
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    transform-origin: top;
+    opacity: 1;
+  }
 }
 
 .description-container {
@@ -1391,12 +1406,7 @@ footer {
   box-shadow: 2px 2px 5px #EB5E28;
   transition: 0.3s;
   text-shadow: 1px 1px 1px #3b3b3b;
-}
-
-.consultar-button a {
   font-size: 22px;
-  color: #EB5E28;
-  text-decoration: none;
 }
 
 .consultar-button svg {

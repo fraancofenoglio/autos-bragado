@@ -25,7 +25,11 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.sendForm("service_b2myntb", "template_ssj27gq", form.current, "7NqG_0L9oXGAZ--p5");
+
+    if (name && email && number && message) {
+      emailjs.sendForm("service_b2myntb", "template_ssj27gq", form.current, "7NqG_0L9oXGAZ--p5");
+      
+    }
     signal("¡Consulta enviada!");
     setName("");
     setEmail("");
