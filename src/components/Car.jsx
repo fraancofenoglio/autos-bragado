@@ -14,15 +14,26 @@ const Car = () => {
     const [showDetails, setShowDetails] = useState(false)
 
     useEffect(() => {
-        const queryDoc = doc(db, "vehicles", id);
-
-        const autoID = getDoc(queryDoc)
-        .then(res => {
-            setAuto(res.data())
-        }).catch(window.location.href = "/not-found")
+        search()
     }, [])
-    
 
+    const search = async () => {
+        try {
+            const queryDoc = doc(db, "vehicles", id);
+
+            const autoID = await getDoc(queryDoc);
+
+            if (autoID.data()) {
+                setAuto(autoID.data());
+            }else {
+                window.location.href = "/not-found";
+            }
+
+          } catch (error) {
+            console.error(error);
+        }
+    }
+    
     const { setClick } = useContext(SearchContext);
 
     const {marca, motor, combustible, year, precio, transmision, km, modelo, imagenes, color, descripcion} = auto;
