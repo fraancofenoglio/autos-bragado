@@ -10,15 +10,15 @@ const Footer = () => {
           </HashLink>
 
           <HashLink smooth to="#oferta">
-            Busca tu auto
+            Buscá tu auto
           </HashLink>
 
           <HashLink smooth to="/venta">
-            Vende tu auto
+            Vendé tu auto
           </HashLink>
 
           <HashLink smooth to="/contacto">
-            Contactenos
+            Contáctenos
           </HashLink>
         </div>
 

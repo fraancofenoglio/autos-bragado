@@ -45,16 +45,16 @@ const AddCar = () => {
         setTransmision("");
         setMotor("");
         setColor("");
-        setPrecio(0);
-        setAño(0);
-        setKilometros(0);
+        setPrecio("");
+        setAño("");
+        setKilometros("");
         setDescripcion("");
         setNum([0]);
         setFiles([]);
         setExecuted(!executed)
     }
 
-    const condition = files && marca && modelo && combustible && transmision && motor && color && precio > 0 && año > 0 && kilometros && descripcion;
+    const condition = files && marca && modelo && combustible && transmision && motor && color && precio > 0 && año > 0 && kilometros >= 0 && descripcion;
     
     const uploadFile = async () => {
 

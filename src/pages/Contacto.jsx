@@ -8,7 +8,7 @@ const Contacto = () => {
             <img src="./assets/contacto.jpg" alt="mujer con smartphone en la mano" />
 
             <div className='contacto-texto'>
-                <h4>Contactenos</h4>
+                <h4>Contáctenos</h4>
             </div>
         </div>
 

@@ -55,7 +55,7 @@ const NavMobile = () => {
             </HashLink>
 
             <HashLink smooth to="/contacto" onClick={handleClick}>
-              Contactenos
+              Contáctenos
             </HashLink>
 
           </div> :
@@ -72,7 +72,7 @@ const NavMobile = () => {
             </HashLink>
 
             <HashLink smooth to="/contacto" onClick={handleClick}>
-              Contactenos
+              Contáctenos
             </HashLink>
           </div>
         }
