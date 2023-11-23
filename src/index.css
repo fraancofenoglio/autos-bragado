@@ -1874,6 +1874,9 @@ footer {
     max-height: 166px;
   }
 
+}
+
+@media only screen and (min-width: 1170px){
   .car-container {
     width: 100vw;
     display: flex;
@@ -1889,7 +1892,6 @@ footer {
   .car-info-container {
     width: 400px;
   }
-
 }
 
 @media only screen and (min-width: 1270px){

@@ -139,7 +139,7 @@ const Car = () => {
 
             <div className='description-container'>
                 <h6 className='description-title'>Descripción</h6>
-                <p>{descripcion}</p>
+                <p style={{ whiteSpace: 'pre-line' }}>{descripcion}</p>
             </div>
 
             <button onClick={() => window.location.href = "https://api.whatsapp.com/send/?phone=5492342465676&text=Hola%2C+me+gustar%C3%ADa+que+me+pases+info+de"} className='consultar-button'>
